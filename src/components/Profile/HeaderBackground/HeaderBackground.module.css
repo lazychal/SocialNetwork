@@ -1,0 +1,4 @@
+.HeaderBackground {
+    grid-row-gap: 10px;
+    grid-area: hb;
+}
