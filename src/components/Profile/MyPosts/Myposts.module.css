@@ -1,4 +1,9 @@
 .posts {
     grid-area: p;
     background-color: khaki;
+    padding: 10px;
+
+}
+.item button {
+    margin-bottom: 20px;
 }

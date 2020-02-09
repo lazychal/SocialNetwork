@@ -1,12 +1,12 @@
-/*.content{*/
-/*    display: grid;*/
-/*    grid-gap: 10px;*/
-/*    grid-area: c;*/
+.content{
+    display: grid;
+    grid-gap: 10px;
+    grid-area: c;
 
-/*    grid-template-areas:*/
-/*    "hb"*/
-/*    "a"*/
-/*    "p";*/
-/*}*/
+    grid-template-areas:
+    "hb"
+    "a"
+    "p";
+}
 
 
