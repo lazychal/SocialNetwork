@@ -9,8 +9,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
-function App(props) {
-
+function App() {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
