@@ -61,7 +61,7 @@ let store = {
         //Уведомили подписчика о изменениях, т.к. редюсеры этим не занимаются.
         this._callSubscriber(this._state);
     }
-}
+};
 
 window.store = store;
 export default store;

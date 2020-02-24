@@ -1,19 +1,16 @@
 import React from 'react';
-import s from './Profile.module.css'
-import MyPosts from "./MyPosts/MyPosts";
+import s from './Profile.module.css';
 import HeaderBackground from "./HeaderBackground/HeaderBackground";
 import Ava_desc from "./Ava_desc/Ava_desc";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 const Profile = (props) => {
 
     return <div>
         <HeaderBackground/>
         <Ava_desc/>
-        <MyPosts posts={props.profilePage.posts}
-                 newPostText={props.profilePage.newPostText}
-                 dispatch={props.dispatch}
-        />
+        <MyPostsContainer/>
     </div>
-}
+};
 
 export default Profile;
