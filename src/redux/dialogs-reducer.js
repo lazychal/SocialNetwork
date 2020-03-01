@@ -22,21 +22,25 @@ let initialState = {
 const dialogsReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY:
+        case UPDATE_NEW_MESSAGE_BODY:{
+            let stateCopy = {...state};
             //Изменение state
-            state.newMessageBody = action.body;
-            return state;
-        case SEND_MESSAGE:
+            stateCopy.newMessageBody = action.body;
+            return stateCopy;
+        }
+        case SEND_MESSAGE:{
+            let stateCopy = {...state};
             //Записали значение в новую переменную.
-            let body = state.newMessageBody;
+            let body = stateCopy.newMessageBody;
 
             // Обнулили значение после сохранения в body(чтобы textarea очистилась после отправки сообщения).
-            state.newMessageBody = '';
+            stateCopy.newMessageBody = '';
 
             //Пушим новое значение из переменной в массив state, обязательно в формате,
             //соотвтествующем формату объекта массива (чтобы по форме и свойствам всё совпадало).
-            state.messages.push({id: 6, message: body});
-            return state;
+            stateCopy.messages.push({id: 6, message: body});
+            return stateCopy;
+        }
         default:
             return state;
     }

@@ -1,38 +1,28 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
-import DialogItem from "./DialogItem/DialogItem";
-import Message from "./Message/Message";
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
-import StoreContext from "../../StoreContext";
+import {connect} from "react-redux";
 
-const DialogsContainer = () => {
 
-    return (
-        <StoreContext.Consumer>
-            {
-            (store) => {
-
-                //Эта переменная создана для хранения здесь значения dialogsPage.
-                let state = store.getState().dialogsPage;
-
-                let onSendMessageClick = () => {
-                    store.dispatch(sendMessageCreator())
-                };
-
-                let onNewMessageChange = (body) => {
-                    //Диспатчим action в store. Обязательно ставим скобки, т.к. это ActionCreator, и нам его надо вызывать.
-                    store.dispatch(updateNewMessageBodyCreator(body))
-                };
-
-                return <Dialogs updateNewMessageBody={onNewMessageChange}
-                                sendMessage={onSendMessageClick}
-                                dialogsPage={state}
-                />
-            }
-        }
-        </StoreContext.Consumer>
-    )
+let mapStateToProps = (state) => {
+// Эта ф-я передаёт state в пропсы.
+    return {
+        dialogsPage: state.dialogsPage,
+    }
 };
+
+let mapDispatchToProps = (dispatch) => {
+//Эта ф-я передаёт коллбэки в пропсы.
+    return {
+        updateNewMessageBody: (body) => {
+            dispatch(updateNewMessageBodyCreator(body))
+        },
+        sendMessage: () => {
+            dispatch(sendMessageCreator())
+        },
+    }
+};
+
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
 export default DialogsContainer;
