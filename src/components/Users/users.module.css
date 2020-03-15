@@ -5,3 +5,11 @@
 .selectedPage {
     font-weight: bold;
 }
+
+.preloader{
+    width: 120px;
+    height: auto;
+    position:absolute;
+    z-index:9999;
+    margin: 250px;
+}
