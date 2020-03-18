@@ -20,7 +20,15 @@ function App() {
                 <div className='app-wrapper-content'>
                     <Route path='/dialogs'
                            render={() => <DialogsContainer/>}/>
-                    <Route path='/profile' render={() => <ProfileContainer/>}/>
+
+                    {/*В строке ниже мы присваеваем URL доп. параметр, который будет считывать ID юзера.
+                    Далее, в контейнерной компоненте, мы зоздаём переменную, с таким же названием(необязательно),
+                    и присваиваем ей значение, приходящее в пропсы(смотрим в консоли): props.match.params.userId
+                    И, наконец, в componentDidMount, в ajax-запросе плюсуем к URL нашу переменную
+                    userId(или как мы там её назвали). Теперь страница будет отслеживать ID, и отрисовывать профили
+                    любых, нужных нам пользователей.*/}
+                    <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+
                     <Route path='/users' render={() => <UsersContainer/>}/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music/>}/>
