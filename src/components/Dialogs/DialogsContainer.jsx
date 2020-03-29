@@ -8,6 +8,7 @@ let mapStateToProps = (state) => {
 // Эта ф-я передаёт state в пропсы.
     return {
         dialogsPage: state.dialogsPage,
+        isAuth: state.auth.isAuth,
     }
 };
 
