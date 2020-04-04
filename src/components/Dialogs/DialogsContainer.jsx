@@ -2,15 +2,13 @@ import React from "react";
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
+import {Redirect} from "react-router-dom";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 
-let mapStateToProps = (state) => {
-// Эта ф-я передаёт state в пропсы.
-    return {
-        dialogsPage: state.dialogsPage,
-        isAuth: state.auth.isAuth,
-    }
-};
+
+let mapStateToProps = (state) => {return {dialogsPage: state.dialogsPage}};
 
 let mapDispatchToProps = (dispatch) => {
 //Эта ф-я передаёт коллбэки в пропсы.
@@ -24,6 +22,12 @@ let mapDispatchToProps = (dispatch) => {
     }
 };
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+//Первый вызов compose, это вызов самой ф-и, а второй, это вызов функции, которую вернул compose.
 
-export default DialogsContainer;
+//Что происходит: Берем Dialogs, закидываем в withAuthRedirect, ответ withAuthRedirect
+// закидываем в connect.
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuthRedirect,
+)(Dialogs);
