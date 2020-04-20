@@ -1,27 +1,34 @@
 import {Field, reduxForm} from "redux-form";
 import React from "react";
+import {maxLengthCreator, required} from "../../../utils/validators/validators";
+import {Textarea} from "../../common/FormControls/FormControls";
+
+const  maxLength10 = maxLengthCreator(10);
 
 const NewPostForm = (props) => {
-    return (
-        <form onSubmit={props.handleSubmit}>
+    return <form onSubmit={props.handleSubmit}>
             <div>
-                <Field  placeholder={'New Post'} name={'newPostText'} component={'textarea'}/>
+                <Field  placeholder='New Post'
+                        name='newPostText'
+                        component={Textarea}
+                        validate={[required, maxLength10]}
+                />
             </div>
             <div>
                 <button>Add Post</button>
             </div>
         </form>
-    )
+
 };
 //Обёртка, контейнер
 export const NewPostReduxForm = reduxForm({form: 'post'})(NewPostForm);
-const PostForm = (props) => {
-    const onSubmit = (formData) => {
-        console.log(formData)
-    };
-    return <div>
-        <h3>My Posts</h3>
-        <NewPostReduxForm onSubmit={onSubmit}/>
-    </div>
-};
-export default PostForm;
+// const PostForm = (props) => {
+//     const onSubmit = (formData) => {
+//         console.log(formData)
+//     };
+//     return <div>
+//         <h3>My Posts</h3>
+//         <NewPostReduxForm onSubmit={onSubmit}/>
+//     </div>
+// };
+// export default PostForm;

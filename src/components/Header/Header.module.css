@@ -1,26 +1,24 @@
 .header {
     grid-area: h;
-    background-color: cadetblue;
+    background-color: #343B4D;
+    box-shadow: inset -1px -1px 1px 0 rgba(0,0,0,.5), inset 1px 1px 1px 0 rgba(255,255,255,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .header img {
     width: 50px;
 }
 
-.header:before {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    content: "";
-}
 .logo {
-    display: inline-block;
-    vertical-align: middle;
     margin-left: 5px;
 }
 .loginBlock {
-    float:right;
+    color: #FCFEFF;
 }
 .loginBlock a {
     color: white;
+
 }

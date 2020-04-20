@@ -14,9 +14,10 @@
     display: grid;
     grid-gap: 10px;
     grid-area: c;
-    background-color: khaki;
+    background-color: #BBCBDA;
 
     grid-template-areas: "hb" "a" "p";
+    box-shadow: inset -1px -1px 1px 0 rgba(0,0,0,.5), inset 1px 1px 1px 0 rgba(255,255,255,0.5);
 }
 
 

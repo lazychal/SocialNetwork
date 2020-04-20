@@ -1,13 +1,18 @@
 .nav {
     grid-area: n;
-    background-color: cadetblue;
+    background-color: #343B4D;
     padding: 20px;
+    box-shadow: inset -1px -1px 1px 0 rgba(0,0,0,.5), inset 1px 1px 1px 0 rgba(255,255,255,0.5);
 }
 .item a {
     color: white;
     text-decoration: none;
+    font-size: 15px;
+    font-size: 20px;
+    font-family: CorsicaRamblerLX,sans-serif;
+    font-weight: 700;
 }
 
 .item a.active {
-    color: coral;
+    color: #C4CFE1;
 }
