@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const ProfileStatusWithHooks = (props) => {
 
@@ -9,6 +9,12 @@ const ProfileStatusWithHooks = (props) => {
     let [editMode, setEditMode] = useState(false);
     //Второй state, для статуса.
     let [status, setStatus] = useState(props.status);
+    
+    // Hook. Выполняет содержимое после отрисовки.
+    // [props.status] - это зависимость. Чтобы useEffect синхронизировался с этим значением.
+    useEffect(()=>{
+        setStatus(props.status)
+    }, [props.status]);
 
     //Вкл/выкл - режим редактирования
     const activateEditMode = () => {
