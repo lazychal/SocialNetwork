@@ -1,3 +1,18 @@
 .selectedPage {
     font-weight: bold;
 }
+.paginator {
+
+}
+.pageNumber {
+    cursor: pointer;
+}
+
+.leftButton {
+    border-radius: 1px;
+    cursor: pointer;
+}
+.rightButton {
+    border-radius: 1px;
+    cursor: pointer;
+}

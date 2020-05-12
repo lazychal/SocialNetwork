@@ -8,6 +8,7 @@
     grid-template-columns: 2fr 10fr;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
+
 }
 
 .app-wrapper-content {
@@ -18,6 +19,7 @@
 
     grid-template-areas: "hb" "a" "p";
     box-shadow: inset -1px -1px 1px 0 rgba(0,0,0,.5), inset 1px 1px 1px 0 rgba(255,255,255,0.5);
+    padding: 30px;
 }
 
 
