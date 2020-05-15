@@ -1,22 +1,31 @@
 {
   "files": {
-    "main.css": "/SocialNetwork/static/css/main.427e7232.chunk.css",
-    "main.js": "/SocialNetwork/static/js/main.9a7d9c46.chunk.js",
-    "main.js.map": "/SocialNetwork/static/js/main.9a7d9c46.chunk.js.map",
-    "runtime-main.js": "/SocialNetwork/static/js/runtime-main.be7fe9b3.js",
-    "runtime-main.js.map": "/SocialNetwork/static/js/runtime-main.be7fe9b3.js.map",
-    "static/js/2.54026c81.chunk.js": "/SocialNetwork/static/js/2.54026c81.chunk.js",
-    "static/js/2.54026c81.chunk.js.map": "/SocialNetwork/static/js/2.54026c81.chunk.js.map",
-    "index.html": "/SocialNetwork/index.html",
-    "precache-manifest.3ac1b43a7da1d6b3803e9026c3d42aaf.js": "/SocialNetwork/precache-manifest.3ac1b43a7da1d6b3803e9026c3d42aaf.js",
-    "service-worker.js": "/SocialNetwork/service-worker.js",
-    "static/css/main.427e7232.chunk.css.map": "/SocialNetwork/static/css/main.427e7232.chunk.css.map",
-    "static/js/2.54026c81.chunk.js.LICENSE": "/SocialNetwork/static/js/2.54026c81.chunk.js.LICENSE"
+    "main.css": "/SocNet-Demo/static/css/main.06504fba.chunk.css",
+    "main.js": "/SocNet-Demo/static/js/main.f3406bc5.chunk.js",
+    "main.js.map": "/SocNet-Demo/static/js/main.f3406bc5.chunk.js.map",
+    "runtime-main.js": "/SocNet-Demo/static/js/runtime-main.423e0b02.js",
+    "runtime-main.js.map": "/SocNet-Demo/static/js/runtime-main.423e0b02.js.map",
+    "static/js/2.6ac8379e.chunk.js": "/SocNet-Demo/static/js/2.6ac8379e.chunk.js",
+    "static/js/2.6ac8379e.chunk.js.map": "/SocNet-Demo/static/js/2.6ac8379e.chunk.js.map",
+    "static/css/3.94f93b88.chunk.css": "/SocNet-Demo/static/css/3.94f93b88.chunk.css",
+    "static/js/3.a1b5c856.chunk.js": "/SocNet-Demo/static/js/3.a1b5c856.chunk.js",
+    "static/js/3.a1b5c856.chunk.js.map": "/SocNet-Demo/static/js/3.a1b5c856.chunk.js.map",
+    "static/css/4.d80539b0.chunk.css": "/SocNet-Demo/static/css/4.d80539b0.chunk.css",
+    "static/js/4.cb87cc09.chunk.js": "/SocNet-Demo/static/js/4.cb87cc09.chunk.js",
+    "static/js/4.cb87cc09.chunk.js.map": "/SocNet-Demo/static/js/4.cb87cc09.chunk.js.map",
+    "index.html": "/SocNet-Demo/index.html",
+    "precache-manifest.9a7c4a45eedc43df9a2233ad9b6a87b2.js": "/SocNet-Demo/precache-manifest.9a7c4a45eedc43df9a2233ad9b6a87b2.js",
+    "service-worker.js": "/SocNet-Demo/service-worker.js",
+    "static/css/3.94f93b88.chunk.css.map": "/SocNet-Demo/static/css/3.94f93b88.chunk.css.map",
+    "static/css/4.d80539b0.chunk.css.map": "/SocNet-Demo/static/css/4.d80539b0.chunk.css.map",
+    "static/css/main.06504fba.chunk.css.map": "/SocNet-Demo/static/css/main.06504fba.chunk.css.map",
+    "static/js/2.6ac8379e.chunk.js.LICENSE.txt": "/SocNet-Demo/static/js/2.6ac8379e.chunk.js.LICENSE.txt",
+    "static/media/loading.gif": "/SocNet-Demo/static/media/loading.6f1fb8cd.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.be7fe9b3.js",
-    "static/js/2.54026c81.chunk.js",
-    "static/css/main.427e7232.chunk.css",
-    "static/js/main.9a7d9c46.chunk.js"
+    "static/js/runtime-main.423e0b02.js",
+    "static/js/2.6ac8379e.chunk.js",
+    "static/css/main.06504fba.chunk.css",
+    "static/js/main.f3406bc5.chunk.js"
   ]
 }
