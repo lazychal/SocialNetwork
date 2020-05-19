@@ -2,3 +2,10 @@
     grid-area: a;
     padding: 10px;
 }
+.contact {
+
+}
+
+.formSummaryError {
+    color: red;
+}
