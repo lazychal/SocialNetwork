@@ -9,7 +9,7 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
                 <span>
                     <div>
                         <NavLink to={'/profile/' + user.id}>
-                            <img src={user.photos.small !== null ? user.photos.small : userPhoto}
+                            <img alt='user picture' src={user.photos.small !== null ? user.photos.small : userPhoto}
                                  className={s.userPhoto}/>
                         </NavLink>
                     </div>
@@ -32,7 +32,7 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
                             </button>}
                     </div>
                 </span>
-        <span>
+                <span>
                     <span>
                         <div>{user.name}</div>
                         <div>{user.status}</div>

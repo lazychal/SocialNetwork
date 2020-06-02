@@ -18,9 +18,19 @@ const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsCo
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 
 class App extends React.Component {
-
+    catchAllUnhandledErrors = (reason, promise) => {
+        alert('Something is Bad...');
+        // console.error(promise)
+    };
     componentDidMount() {
         this.props.initializeApp();
+
+        //Отлавливаем промисы reject(ошибки)
+        window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors)
+    }
+    componentWillUnmount() {
+        // Подчищаем "мусор" за addEventListener
+        window.removeEventListener('unhandledrejection', this.catchAllUnhandledErrors)
     }
 
     render() {
