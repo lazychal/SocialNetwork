@@ -1,0 +1,7 @@
+@import "src/components/common/GlobalMixins/GlobalMixin.scss";
+
+.profileWrapper {
+    @include globalContainersWrapper;
+}
+
+

@@ -1,0 +1,12 @@
+@import "../common/GlobalMixins/GlobalMixin.scss";
+
+.nav {
+    @include globalContainersWrapper;
+}
+.item a {
+
+}
+
+.item a.active {
+
+}

@@ -74,7 +74,7 @@ class App extends React.Component {
                     </div>
 
                     <div className={s.areaC}>
-
+                        <div className={s.contentAreaC}></div>
                     </div>
 
                 </div>

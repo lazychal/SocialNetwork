@@ -1,3 +1,5 @@
+@import "src/components/common/GlobalMixins/GlobalMixin";
+
 @mixin body {
     color: #444444;
     line-height: 1.7;
@@ -48,6 +50,9 @@
     @include areasTemplate;
     display: grid;
     grid-area: c;
+}
+.contentAreaC {
+    @include globalContainersWrapper;
 }
 
 .appFooter {
