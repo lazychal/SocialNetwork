@@ -1,0 +1,58 @@
+@mixin body {
+    color: #444444;
+    line-height: 1.7;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #f1f1f1;
+    font-family: "Roboto", sans-serif;
+}
+@mixin areasTemplate {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.appWrapper {
+    @include body;
+    display: block;
+}
+
+.appHeader {
+
+}
+
+.appBody {
+    @include body;
+    padding-bottom: 105px;
+    padding-top: 80px;
+    box-sizing: border-box;
+
+    display: grid;
+    width: 100%;
+    grid-template-areas: "a b c";
+    grid-gap: 15px;
+}
+.areaA {
+    @include areasTemplate;
+    display: grid;
+    grid-area: a;
+}
+.areaB {
+    @include areasTemplate;
+    display: grid;
+    grid-area: b;
+}
+
+.areaC {
+    @include areasTemplate;
+    display: grid;
+    grid-area: c;
+}
+
+.appFooter {
+
+}
+
+
+

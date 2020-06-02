@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 
 const ProfileDropdown = (props) => {
     return <div className={s.profileDropdown}>
-        
+
     </div>
 };
 
