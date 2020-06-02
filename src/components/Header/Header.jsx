@@ -25,8 +25,11 @@ const Header = (props) => {
                             <button className={s.topSearchBtn}>S</button>
                         </form>
                     </div>
-                    {props.isAuth ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>
-                        : <NavLink to={'/login'}>Login</NavLink>}
+                    <div className={s.profileSettingBox}>
+                        <img src="" alt="User Photo Mini"/>
+                        {props.isAuth ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>
+                            : <NavLink to={'/login'}>Login</NavLink>}
+                    </div>
                 </div>
             </div>
         </div>
