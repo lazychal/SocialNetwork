@@ -79,17 +79,13 @@ $bgColor: #FCFEFF;
     }
 }
 .container {
-
-}
-.row {
+    width: 80%;
     display: flex;
-    -ms-flex-wrap: wrap;
-    //flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
     align-items: center;
     justify-content: space-between;
+    margin: 0 auto;
 }
+
 .mainMenu {
     li {
         @include li-navigation;
@@ -109,12 +105,10 @@ $bgColor: #FCFEFF;
     }
 }
 
-.navUl :last-child {
-    margin-right: 0;
-    padding-right: 0;
+.navUl {
+    margin: 0;
+    padding: 0;
 }
-
-
 .logo {
     position: relative;
     width: 100%;

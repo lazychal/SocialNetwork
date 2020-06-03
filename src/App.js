@@ -48,40 +48,44 @@ class App extends React.Component {
                 <div className={s.appHeader}>
                     <HeaderContainer/>
                 </div>
-
-                <div className={s.appBody}>
-                    <div className={s.areaA}>
-                        <NavBar/>
-                    </div>
-                    <div className={s.areaB}>
-                        <Switch>
-                            <Route exact path='/' render={() => <Redirect to={'/profile'}/>}/>
-                            <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>
-                            {/*В строке ниже мы присваеваем URL доп. параметр, который будет считывать ID юзера.
+                <div className={s.content}>
+                    <div className={s.container}>
+                        <div className={s.appBody}>
+                            <div className={s.areaA}>
+                                <NavBar/>
+                            </div>
+                            <div className={s.areaB}>
+                                <Switch>
+                                    <Route exact path='/' render={() => <Redirect to={'/profile'}/>}/>
+                                    <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>
+                                    {/*В строке ниже мы присваеваем URL доп. параметр, который будет считывать ID юзера.
                     Далее, в контейнерной компоненте, мы зоздаём переменную, с таким же названием(необязательно),
                     и присваиваем ей значение, приходящее в пропсы(смотрим в консоли): props.match.params.userId
                     И, наконец, в componentDidMount, в ajax-запросе плюсуем к URL нашу переменную
                     userId(или как мы там её назвали). Теперь страница будет отслеживать ID, и отрисовывать профили
                     любых, нужных нам пользователей.*/}
-                            <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)}/>
-                            <Route path='/users' render={() => <UsersContainer/>}/>
-                            <Route path='/news' render={() => <News/>}/>
-                            <Route path='/music' render={() => <Music/>}/>
-                            <Route path='/settings' render={() => <Settings/>}/>
-                            <Route path='/login' render={() => <Login/>}/>
-                            <Route path='*' render={() => <div>404 Not Found</div>}/>
-                        </Switch>
-                    </div>
+                                    <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)}/>
+                                    <Route path='/users' render={() => <UsersContainer/>}/>
+                                    <Route path='/news' render={() => <News/>}/>
+                                    <Route path='/music' render={() => <Music/>}/>
+                                    <Route path='/settings' render={() => <Settings/>}/>
+                                    <Route path='/login' render={() => <Login/>}/>
+                                    <Route path='*' render={() => <div>404 Not Found</div>}/>
+                                </Switch>
+                            </div>
 
-                    <div className={s.areaC}>
-                        <div className={s.contentAreaC}></div>
-                    </div>
+                            <div className={s.areaC}>
+                                <div className={s.contentAreaC}></div>
+                            </div>
 
+                        </div>
+
+                        <div className={s.appFooter}>
+
+                        </div>
+                    </div>
                 </div>
 
-                <div className={s.appFooter}>
-
-                </div>
 
             </div>
 

@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 const Header = (props) => {
     return <header className={s.header}>
         <div className={s.container}>
-            <div className={s.row}>
+
                 <div className={s.mainMenu}>
                     <nav>
                         <ul className={s.navUl}>
@@ -31,7 +31,7 @@ const Header = (props) => {
                             : <NavLink to={'/login'}>Login</NavLink>}
                     </div>
                 </div>
-            </div>
+
         </div>
     </header>
 };
