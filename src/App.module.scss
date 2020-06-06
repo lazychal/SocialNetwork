@@ -26,7 +26,7 @@
     @include body;
 }
 .container {
-    width: 80%;
+    width: 77%;
     margin: 0 auto;
 }
 
@@ -36,24 +36,42 @@
 
     display: grid;
     width: 100%;
-    grid-template-areas: "a b c";
-    grid-gap: 15px;
+    grid-template-areas: "widgetArea b c";
+    grid-template-columns: 24fr 52fr 24fr;
+    grid-gap: 30px;
 }
-.areaA {
+.widgetArea {
     @include areasTemplate;
     display: grid;
-    grid-area: a;
+    grid-area: widgetArea;
+    background-color: #fff;
+    grid-template-areas: 'cardProfileArea'
+                         'pagesWidgetArea'
+                         'topNewsWidgetArea';
+    grid-template-rows: 280px 355px 515px;
+    grid-row-gap: 30px;
+    .cardProfileArea {
+
+    }
+    .pagesWidgetArea {
+
+    }
+    .topNewsWidgetArea {
+
+    }
 }
 .areaB {
     @include areasTemplate;
     display: grid;
     grid-area: b;
+    background-color: #fff;
 }
 
 .areaC {
     @include areasTemplate;
     display: grid;
     grid-area: c;
+    background-color: #fff;
 }
 .contentAreaC {
     @include globalContainersWrapper;

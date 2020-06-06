@@ -13,6 +13,7 @@ import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/preloader/Preloader";
 import {withSuspense} from "./hoc/withSuspense";
+import CardProfile from "./components/Widgets/CardProfile/CardProfile";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
@@ -51,8 +52,11 @@ class App extends React.Component {
                 <div className={s.content}>
                     <div className={s.container}>
                         <div className={s.appBody}>
-                            <div className={s.areaA}>
-                                <NavBar/>
+                            <div className={s.widgetArea}>
+                                <div className={s.cardProfileArea}> <CardProfile/> </div>
+                                <div className={s.pagesWidgetArea}> <NavBar/> </div>
+
+                                <div className={s.topNewsWidgetArea}>Latest Top News</div>
                             </div>
                             <div className={s.areaB}>
                                 <Switch>
