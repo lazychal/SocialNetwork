@@ -14,6 +14,7 @@ import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/preloader/Preloader";
 import {withSuspense} from "./hoc/withSuspense";
 import CardProfile from "./components/Widgets/CardProfile/CardProfile";
+import CardInterestingPages from "./components/Widgets/CardInterestingPages/CardInterestingPages";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
@@ -53,8 +54,13 @@ class App extends React.Component {
                     <div className={s.container}>
                         <div className={s.appBody}>
                             <div className={s.widgetArea}>
-                                <div className={s.cardProfileArea}> <CardProfile/> </div>
-                                <div className={s.pagesWidgetArea}> <NavBar/> </div>
+                                <div className={s.cardProfileArea}>
+                                    <CardProfile/>
+                                </div>
+                                <div className={s.pagesWidgetArea}>
+                                    {/*<NavBar/> */}
+                                    <CardInterestingPages/>
+                                </div>
 
                                 <div className={s.topNewsWidgetArea}>Latest Top News</div>
                             </div>
