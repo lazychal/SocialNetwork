@@ -11,10 +11,11 @@
 
   .widgetTitle {
     @include widgetsTitle;
+    margin: 0;
   }
 
   .widgetTitle:before {
-    bottom: -12px;
+    bottom: -5px;
     left: 0;
     width: 30px;
     height: 1px;
@@ -30,7 +31,6 @@
       padding: 0;
 
       .listItem {
-        margin-bottom: 35px;
         list-style-type: none;
         display: flex;
         align-items: center;
@@ -55,23 +55,29 @@
         .listItemInfo {
           padding-left: 10px;
           .itemTitle {
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 1.3;
-            padding-bottom: 3px;
-            color: #333333;
             margin-bottom: 0;
             a {
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 1.3;
+              padding-bottom: 3px;
+              color: #333333;
+              margin-bottom: 0;
               transition: 0.4s;
+              text-decoration: none;
             }
           }
 
           .itemSubtitle {
-            font-size: 12px;
-            font-weight: 400;
-            color: #666666;
-            text-transform: capitalize;
-            margin: 0;
+            margin-top: 0;
+            a {
+              font-size: 12px;
+              font-weight: 400;
+              color: #666666;
+              text-transform: capitalize;
+              margin: 0;
+              text-decoration: none;
+            }
           }
           .itemSubtitle:last-child {
             margin-bottom: 0;

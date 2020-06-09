@@ -10,8 +10,8 @@ const Header = (props) => {
                     <nav>
                         <ul className={s.navUl}>
                             <li><NavLink to='/' className={s.navLink}>Home</NavLink></li>
-                            <li><NavLink to='' >Message</NavLink></li>
-                            <li><NavLink to='' >Notification</NavLink></li>
+                            <li><NavLink to='' className={s.navLink}>Message</NavLink></li>
+                            <li><NavLink to='' className={s.navLink}>Notification</NavLink></li>
                         </ul>
                     </nav>
                 </div>

@@ -96,20 +96,22 @@ $bgColor: #FCFEFF;
     }
     ul li:hover .navLink, ul li:active .navLink {
         color: #dc4734;
+        transition: 0.4s;
     }
     .navLink:hover, .navLink:focus {
         outline: none;
         text-decoration: none;
     }
     .navLink {
-        transition: 0.4s;
+        text-decoration: none;
+    }
+    .navUl {
+        margin: 0;
+        padding: 0;
     }
 }
 
-.navUl {
-    margin: 0;
-    padding: 0;
-}
+
 .logo {
     position: relative;
     width: 100%;
