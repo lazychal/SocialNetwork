@@ -15,6 +15,7 @@ import Preloader from "./components/common/preloader/Preloader";
 import {withSuspense} from "./hoc/withSuspense";
 import CardProfile from "./components/Widgets/CardProfile/CardProfile";
 import CardInterestingPages from "./components/Widgets/CardInterestingPages/CardInterestingPages";
+import TopNews from "./components/Widgets/TopNewsWidget/TopNews";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
@@ -53,8 +54,9 @@ class App extends React.Component {
                 <div className={s.content}>
                     <div className={s.container}>
                         <div className={s.appBody}>
+
                             <div className={s.widgetArea}>
-                                <div className={s.cardProfileArea}>
+                                <div className={s.cardProfileWidgetArea}>
                                     <CardProfile/>
                                 </div>
                                 <div className={s.pagesWidgetArea}>
@@ -62,8 +64,11 @@ class App extends React.Component {
                                     <CardInterestingPages/>
                                 </div>
 
-                                <div className={s.topNewsWidgetArea}>Latest Top News</div>
+                                <div className={s.topNewsWidgetArea}>
+                                    <TopNews/>
+                                </div>
                             </div>
+
                             <div className={s.areaB}>
                                 <Switch>
                                     <Route exact path='/' render={() => <Redirect to={'/profile'}/>}/>
