@@ -16,6 +16,7 @@ import {withSuspense} from "./hoc/withSuspense";
 import CardProfile from "./components/Widgets/CardProfile/CardProfile";
 import CardInterestingPages from "./components/Widgets/CardInterestingPages/CardInterestingPages";
 import TopNews from "./components/Widgets/TopNewsWidget/TopNews";
+import NewsFeed from "./components/NewsFeed/NewsFeed";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
@@ -69,27 +70,30 @@ class App extends React.Component {
                                 </div>
                             </div>
 
-                            <div className={s.areaB}>
-                                <Switch>
-                                    <Route exact path='/' render={() => <Redirect to={'/profile'}/>}/>
-                                    <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>
-                                    {/*В строке ниже мы присваеваем URL доп. параметр, который будет считывать ID юзера.
-                    Далее, в контейнерной компоненте, мы зоздаём переменную, с таким же названием(необязательно),
-                    и присваиваем ей значение, приходящее в пропсы(смотрим в консоли): props.match.params.userId
-                    И, наконец, в componentDidMount, в ajax-запросе плюсуем к URL нашу переменную
-                    userId(или как мы там её назвали). Теперь страница будет отслеживать ID, и отрисовывать профили
-                    любых, нужных нам пользователей.*/}
-                                    <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)}/>
-                                    <Route path='/users' render={() => <UsersContainer/>}/>
-                                    <Route path='/news' render={() => <News/>}/>
-                                    <Route path='/music' render={() => <Music/>}/>
-                                    <Route path='/settings' render={() => <Settings/>}/>
-                                    <Route path='/login' render={() => <Login/>}/>
-                                    <Route path='*' render={() => <div>404 Not Found</div>}/>
-                                </Switch>
+                            <div className={s.newsFeedArea}>
+                                <NewsFeed/>
+                                {/*            <Switch>*/}
+                                {/*                <Route exact path='/' render={() => <Redirect to={'/profile'}/>}/>*/}
+                                {/*                <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>*/}
+                                {/*                /!*В строке ниже мы присваеваем URL доп. параметр, который будет считывать ID юзера.*/}
+                                {/*Далее, в контейнерной компоненте, мы зоздаём переменную, с таким же названием(необязательно),*/}
+                                {/*и присваиваем ей значение, приходящее в пропсы(смотрим в консоли): props.match.params.userId*/}
+                                {/*И, наконец, в componentDidMount, в ajax-запросе плюсуем к URL нашу переменную*/}
+                                {/*userId(или как мы там её назвали). Теперь страница будет отслеживать ID, и отрисовывать профили*/}
+                                {/*любых, нужных нам пользователей.*!/*/}
+                                {/*                <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)}/>*/}
+                                {/*                <Route path='/users' render={() => <UsersContainer/>}/>*/}
+                                {/*                <Route path='/news' render={() => <News/>}/>*/}
+                                {/*                <Route path='/music' render={() => <Music/>}/>*/}
+                                {/*                <Route path='/settings' render={() => <Settings/>}/>*/}
+                                {/*                <Route path='/login' render={() => <Login/>}/>*/}
+                                {/*                <Route path='*' render={() => <div>404 Not Found</div>}/>*/}
+                                {/*            </Switch>*/}
                             </div>
 
-                            <div className={s.areaC}>
+                            <div className={s.infoArea}>
+                                {/*При заполнении, убрать эту дивку, и положить сюда компонент
+                                или компоненты в дивках*/}
                                 <div className={s.contentAreaC}></div>
                             </div>
 

@@ -5,23 +5,27 @@
   border: none;
   border-radius: 0;
   margin-bottom: 30px;
-  -webkit-box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
-  box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
+  -webkit-box-shadow: 0 1px 15px 0 rgba(51, 51, 51, 0.2);
+  box-shadow: 0 1px 15px 0 rgba(51, 51, 51, 0.2);
   padding: 25px;
 
   .widgetTitle {
     @include widgetsTitle;
     margin: 0;
-  }
-
-  .widgetTitle:before {
-    bottom: -5px;
-    left: 0;
-    width: 30px;
-    height: 1px;
-    content: "";
-    position: absolute;
-    background-color: #dc4734;
+    cursor: pointer;
+    &:hover {
+      color: #dc4734;
+      transition: 0.4s;
+    }
+    &:before {
+      bottom: -5px;
+      left: 0;
+      width: 30px;
+      height: 1px;
+      content: "";
+      position: absolute;
+      background-color: #dc4734;
+    }
   }
 
   .widgetBody {
@@ -63,8 +67,11 @@
               padding-bottom: 3px;
               color: #333333;
               margin-bottom: 0;
-              transition: 0.4s;
               text-decoration: none;
+              &:hover {
+                color: #dc4734;
+                transition: 0.4s;
+              }
             }
           }
 
@@ -77,6 +84,10 @@
               text-transform: capitalize;
               margin: 0;
               text-decoration: none;
+              &:hover {
+                color: #dc4734;
+                transition: 0.4s;
+              }
             }
           }
           .itemSubtitle:last-child {
@@ -90,14 +101,23 @@
           position: relative;
           border: none;
           background-color: transparent;
+          cursor: pointer;
+          outline: 1px transparent;
+          &:hover .heartColor{
+            visibility: visible;
+          }
           .heart {
-
+            position: absolute;
+            right: 0;
           }
 
           .heartColor {
-
+            position: absolute;
+            visibility: hidden;
+            right: 0;
           }
         }
+
       }
     }
 
