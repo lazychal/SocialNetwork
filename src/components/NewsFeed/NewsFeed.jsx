@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './NewsFeed.module.scss';
+import MyPostsContainer from "../Profile/MyPosts/MyPostsContainer";
 
 const NewsFeed = (props) => {
     return <div className={s.container}>
@@ -25,7 +26,7 @@ const NewsFeed = (props) => {
 
         <div className={s.postsContainer}>
             <div className={s.card}>Some News</div>
-            <div className={s.card}>Some News</div>
+                <MyPostsContainer/>
             <div className={s.card}>Some News</div>
             <div className={s.card}>Some News</div>
         </div>

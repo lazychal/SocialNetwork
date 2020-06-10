@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Myposts.module.css';
+import s from './Myposts.module.scss';
 import Post from "./Post/Post";
 import {NewPostReduxForm} from "./PostForm";
 
@@ -15,8 +15,6 @@ const MyPosts = React.memo(props => {
             <div className={s.posts}>
                 {postElements}
             </div>
-
-
         </div>
     )
 });

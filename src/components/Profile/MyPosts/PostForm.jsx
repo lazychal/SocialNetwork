@@ -17,18 +17,12 @@ const NewPostForm = (props) => {
             <div>
                 <button>Add Post</button>
             </div>
+
+
         </form>
+
+
 
 };
 //Обёртка, контейнер
 export const NewPostReduxForm = reduxForm({form: 'post'})(NewPostForm);
-// const PostForm = (props) => {
-//     const onSubmit = (formData) => {
-//         console.log(formData)
-//     };
-//     return <div>
-//         <h3>My Posts</h3>
-//         <NewPostReduxForm onSubmit={onSubmit}/>
-//     </div>
-// };
-// export default PostForm;
