@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Myposts.module.scss';
 import Post from "./Post/Post";
-import {NewPostReduxForm} from "./PostForm";
+import {NewPostReduxForm} from "./NewPostForm";
 
 const MyPosts = React.memo(props => {
     let postElements = props.posts.map(p => <Post key={p.id} message={p.message} like={p.likesCount}/>);
