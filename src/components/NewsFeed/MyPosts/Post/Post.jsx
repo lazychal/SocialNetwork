@@ -23,13 +23,28 @@ const Post = (props) => {
                     </a>
                 </div>
                 <div className={s.postedAuthor}>
-                    <h6>
-                        <NavLink to='/profile'>{props.fullName} </NavLink>
+                    <h6 className={s.author}>
+                        <NavLink className={s.authorNavLink} to='/profile'>{props.fullName} </NavLink>
                     </h6>
-                    <span>20 min ago</span>
+                    <span className={s.time}>20 min ago</span>
                 </div>
                 <div className={s.postSettingsBar}>
-                    SET
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div className={`${s.postSettings} ${s.arrowShape}`}>
+                        <ul>
+                            <li>
+                                <button>Button 1</button>
+                            </li>
+                            <li>
+                                <button>Button 2</button>
+                            </li>
+                            <li>
+                                <button>Button 3</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
             </div>

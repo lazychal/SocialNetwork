@@ -71,7 +71,6 @@ export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos})
 
 export const getUserProfile = (userId) => async (dispatch) => {
     let response = await usersAPI.getProfile(userId);
-    debugger
     dispatch(setUserProfile(response.data));
 };
 export const getStatus = (userId) => async (dispatch) => {
