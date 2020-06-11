@@ -10,7 +10,9 @@ const Post = (props) => {
     const {userId} = useSelector((state) => state.auth);
     // Диспатчим санку
     const dispatch = useDispatch();
-    useEffect(()=>{dispatch(getUserProfile(userId))}, []);
+    useEffect(() => {
+        dispatch(getUserProfile(userId))
+    }, []);
 
     return (
         <div className={s.card}>
@@ -35,13 +37,13 @@ const Post = (props) => {
                     <div className={`${s.postSettings} ${s.arrowShape}`}>
                         <ul>
                             <li>
-                                <button>Button 1</button>
+                                <button>Copy Link</button>
                             </li>
                             <li>
-                                <button>Button 2</button>
+                                <button>Edit Post</button>
                             </li>
                             <li>
-                                <button>Button 3</button>
+                                <button>Delete Post</button>
                             </li>
                         </ul>
                     </div>
@@ -52,7 +54,22 @@ const Post = (props) => {
                 {props.message}
             </div>
             <div className={s.postActions}>
-                <span>like</span> {props.like}
+                <button className={s.postLikeBtn}>
+                    <i className={s.heartBeat}>
+
+                    </i>
+                    <span>
+                       {props.like} people like this
+                    </span>
+                </button>
+                <span>
+                    <span>
+
+                    </span>
+                    <span>
+
+                    </span>
+                </span>
             </div>
         </div>
     )

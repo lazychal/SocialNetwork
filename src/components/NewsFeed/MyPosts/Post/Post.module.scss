@@ -24,7 +24,7 @@
         font-weight: 800;
         line-height: 1;
         text-transform: capitalize;
-        margin-bottom: 0;
+        margin: 0;
 
         .authorNavLink {
           color: #333333;
@@ -102,19 +102,13 @@
           list-style: none;
         }
         button {
-          border: none;
-          outline: none;
-          padding: 0;
-          box-shadow: none;
-          transition: 0.4s;
-          background-color: transparent;
+          @include globalBtnSet;
           color: #333333;
           display: block;
           font-size: 14px;
           font-weight: 500;
           margin-bottom: 10px;
           text-transform: capitalize;
-          cursor: pointer;
           &:hover {
             color: #dc4734;
             transition: 0.4s;
@@ -146,5 +140,20 @@
     align-items: center;
     padding: 0 12px;
     margin-top: 20px;
+    .postLikeBtn {
+      @include globalBtnSet;
+      .heartBeat {
+        font-size: 20px;
+        color: #333333;
+        vertical-align: middle;
+        font-family: 'bicon'!important;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        line-height: 1;
+        text-transform: none;
+        speak: none;
+      }
+    }
   }
 }
