@@ -1,0 +1,42 @@
+@import "../../../common/GlobalMixins/GlobalMixin";
+
+.card {
+  @include globalContainersWrapper;
+  padding: 30px;
+
+  .postTitle {
+    display: flex;
+    align-items: center;
+    .userThumb {
+      img {
+        width: 45px;
+        height: 45px;
+        display: block;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    .postedAuthor {
+      margin-left: 20px;
+
+      .author {
+
+      }
+      .time {
+
+      }
+    }
+    .postSettingsBar {
+      margin-left: auto;
+      cursor: pointer;
+    }
+  }
+  .postContent {
+    padding-top: 18px;
+  }
+  .postActions {
+    align-items: center;
+    padding: 0 12px;
+    margin-top: 20px;
+  }
+}

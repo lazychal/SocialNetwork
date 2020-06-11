@@ -10,7 +10,7 @@ import Preloader from "./components/common/preloader/Preloader";
 import CardProfile from "./components/Widgets/CardProfile/CardProfile";
 import CardInterestingPages from "./components/Widgets/CardInterestingPages/CardInterestingPages";
 import TopNews from "./components/Widgets/TopNewsWidget/TopNews";
-import NewsFeedLogicContainer from "./components/NewsFeed/NewsFeedLogic";
+import NewsFeedContainer from "./components/NewsFeed/NewsFeed";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
@@ -65,7 +65,7 @@ class App extends React.Component {
 
                             <div className={s.newsFeedArea}>
 
-                                <NewsFeedLogicContainer/>
+                                <NewsFeedContainer/>
 
                                 {/*<NewsFeed/>*/}
 

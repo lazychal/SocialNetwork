@@ -17,11 +17,6 @@ const CardProfile = ({fullName, status}) => {
                      className={s.userPic}
                 />
             </NavLink>
-
-            {/*<a href='' className={s.profileBannerSmall}/>*/}
-            {/*<NavLink to='/profile'/>*/}
-            {/*<a href="http://localhost:3000/profile"></a>*/}
-            {/*<a href=""></a>*/}
         </div>
         <div className={s.profileDesc}>
             <h6 className={s.fullNameTitle}> <NavLink to='/profile'> {fullName} </NavLink> </h6>
