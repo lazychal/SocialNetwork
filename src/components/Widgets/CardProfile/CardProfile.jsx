@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './CardProfile.module.scss'
 import {compose} from "redux";
-import {connect} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
 import {NavLink, withRouter} from "react-router-dom";
+import {getStatus} from "../../../redux/profile-reducer";
 
 const CardProfile = ({fullName, status}) => {
+
     return <div className={s.container}>
         <div className={s.profileWidget}>
             <NavLink to='/profile'>
@@ -27,8 +29,17 @@ const CardProfile = ({fullName, status}) => {
 
 
 const CardProfileContainer = (props) => {
-    return <CardProfile fullName={props.fullName} status={props.status}/>
+    // Как получить статус пользователя, для использования в этом компоненте:
+    // Достаём userId из state
+    const {userId} = useSelector((state) => state.auth);
+    // Диспатчим санку
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getStatus(userId))
+    }, []);
+    // Готово!
 
+    return <CardProfile fullName={props.fullName} status={props.status}/>
 };
 
 let mapStateToProps = (state) => {

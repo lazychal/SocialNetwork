@@ -30,19 +30,29 @@
     }
   }
   .profileDesc {
-    padding: 25px;
+    padding: 30px;
     text-align: center;
+    margin-top: 25px;
+
     .fullNameTitle {
       font-size: 14px;
       font-weight: 800;
       line-height: 1;
-      text-transform: capitalize;
-      margin-bottom: 0;
+      a {
+        color: #333333;
+        text-decoration: none;
+        &:hover {
+          color: #dc4734;
+          transition: 0.4s;
+        }
+      }
+
     }
     .userStatus {
       font-size: 13px;
       color: #666666;
       padding-top: 10px;
+      margin: 0;
     }
   }
 
