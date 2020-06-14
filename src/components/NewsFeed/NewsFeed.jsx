@@ -3,16 +3,14 @@ import s from './NewsFeed.module.scss';
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import {addPostActionCreator} from "../../redux/profile-reducer";
 import {connect} from "react-redux";
-import {NewPostFormContainer} from "./MyPosts/NewPostForm";
+import NewPostContainer from "./MyPosts/NewPost";
 
 const NewsFeed = (props) => {
-    let addNewPost = (values) => {
-        props.addPost(values.newPostText);
-    };
+
     return <div className={s.container}>
 
         <div className={s.newPostContainer}>
-            <NewPostFormContainer onSubmit={addNewPost}/>
+            <NewPostContainer addPost={props.addPost}/>
         </div>
 
         <div className={s.postsContainer}>

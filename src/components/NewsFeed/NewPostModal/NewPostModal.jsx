@@ -8,8 +8,6 @@ const maxLength1200 = maxLengthCreator(1200);
 
 const NewPostModal = (props) => {
 
-
-
     return <div className={s.container}>
         <div className={s.header}>
             Share Your Mood
