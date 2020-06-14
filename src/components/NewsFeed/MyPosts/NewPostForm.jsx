@@ -1,12 +1,16 @@
 import {Field, reduxForm} from "redux-form";
-import React from "react";
+import React, {useState} from "react";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import {Textarea} from "../../common/FormControls/FormControls";
 import s from "../NewsFeed.module.scss";
+import {NewPostModalContainer} from "../NewPostModal/NewPostModal";
 
 const maxLength10 = maxLengthCreator(10);
 
 const NewPostForm = (props) => {
+
+    const [showModal, setShowModal] = useState(false);
+
     return <div className={s.newPost}>
 
             <div className={s.userThumb}>
@@ -19,12 +23,15 @@ const NewPostForm = (props) => {
 
             <div className={s.shareContentBox}>
                 <form onSubmit={props.handleSubmit}>
-                    <div>
+                    <div
+                        onClick={() => {setShowModal(true)}}
+                    >
                         <Field className={s.shareTextField}
                                placeholder='Say Something'
                                name='newPostText'
                                component={Textarea}
                                validate={[required, maxLength10]}
+
                         />
                     </div>
 
@@ -33,8 +40,8 @@ const NewPostForm = (props) => {
                     </div>
                 </form>
             </div>
-            <div className={s.modalNewPost}>
-
+            <div className={ showModal ? s.show : s.fade}>
+                <NewPostModalContainer setShowModal={setShowModal}/>
             </div>
         </div>
 
