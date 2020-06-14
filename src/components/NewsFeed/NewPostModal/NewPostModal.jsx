@@ -12,6 +12,7 @@ const NewPostModal = (props) => {
         <div className={s.header}>
             Share Your Mood
         </div>
+
         <form onSubmit={props.handleSubmit}>
             <div className={s.body}>
                 <Field className={s.shareTextField}
@@ -19,6 +20,7 @@ const NewPostModal = (props) => {
                        name='newPostText'
                        component={Textarea}
                        validate={[required, maxLength1200]}
+                        autofocus={true}
                 />
             </div>
 
@@ -26,6 +28,7 @@ const NewPostModal = (props) => {
                 <button className={s.shareBtn} onClick={() => props.setShowModal(false)}>SHARE</button>
             </div>
         </form>
+
     </div>
 
 };
