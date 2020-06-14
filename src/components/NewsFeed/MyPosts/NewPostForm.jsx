@@ -33,7 +33,9 @@ const NewPostForm = (props) => {
                     </div>
                 </form>
             </div>
+            <div className={s.modalNewPost}>
 
+            </div>
         </div>
 
 
