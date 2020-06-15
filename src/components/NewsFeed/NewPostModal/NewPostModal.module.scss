@@ -1,5 +1,6 @@
 @import "src/components/common/GlobalMixins/GlobalMixin";
 
+
 .container {
   @include globalContainersWrapper;
   width: 540px;
@@ -20,6 +21,21 @@
     border-bottom: 1px solid #dddddd;
     padding: 20px;
     color: black;
+    .closeTheWindow {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #000;
+      text-shadow: 0 1px 0 #fff;
+      opacity: .5;
+      margin-left: 375px;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        transition: 0.4s;
+        opacity: 1;
+      }
+    }
   }
     .body {
       width: 505px;
@@ -46,21 +62,16 @@
       position: relative;
       height: 100px;
       border-top: 1px solid #dddddd;
+      .cancelBtn {
+        @include redBtn;
+        top: 28px;
+        right: 115px;
+
+      }
       .shareBtn {
-        width: 89px;
-        height: 34px;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 1;
-        border: none;
-        border-radius: 40px;
-        background-color: #dc4734;
-        cursor: pointer;
-        position: absolute;
+        @include redBtn;
         top: 28px;
         right: 20px;
-        color: #fff;
-        outline: 1px transparent;
       }
     }
 

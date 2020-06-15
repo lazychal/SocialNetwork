@@ -47,22 +47,9 @@
           resize: none;
         }
         .shareBtn {
-          width: 89px;
-          height: 34px;
-          font-size: 12px;
-          font-weight: 700;
-          line-height: 1;
-          padding: 11px 25px;
-          margin-right: 2px;
-          border: none;
-          border-radius: 40px;
-          background-color: #dc4734;
-          cursor: pointer;
-          position: absolute;
+          @include redBtn;
           top: 21px;
           right: 20px;
-          color: #fff;
-          outline: 1px transparent;
         }
       }
       .fade {

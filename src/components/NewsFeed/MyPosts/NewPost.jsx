@@ -33,7 +33,7 @@ const NewPost = ({showModal, setShowModal, addNewPost}) => {
             </div>
         </div>
         <div className={showModal ? s.show : s.fade}>
-            <NewPostModalContainer setShowModal={setShowModal} onSubmit={addNewPost}/>
+            <NewPostModalContainer setShowModal={setShowModal} showModal={showModal} onSubmit={addNewPost}/>
         </div>
     </div>
 

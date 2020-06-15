@@ -17,3 +17,22 @@
   background-color: transparent;
   cursor: pointer;
 }
+
+@mixin redBtn {
+  width: 89px;
+  height: 34px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  border: none;
+  border-radius: 40px;
+  background-color: #dc4734;
+  cursor: pointer;
+  position: absolute;
+  color: #fff;
+  outline: 1px transparent;
+  transition: 0.4s;
+  &:hover {
+    background-color: rgb(74, 74, 74);
+  }
+}

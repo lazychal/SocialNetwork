@@ -22,7 +22,7 @@ export const Textarea = (props) => {
 
 export const Input = (props) => {
     const {input, meta, child, ...restProps} = props;
-    return <FormControl {...props}><input {...input} {...restProps} autoFocus/></FormControl>
+    return <FormControl {...props}><input {...input} {...restProps}/></FormControl>
 };
 
 export const createField = (placeholder, name, component, validators, props = {}, text='') => (
