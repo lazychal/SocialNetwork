@@ -9,7 +9,7 @@ import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/preloader/Preloader";
 import CardProfile from "./components/Widgets/CardProfile/CardProfile";
 import CardInterestingPages from "./components/Widgets/CardInterestingPages/CardInterestingPages";
-import TopNews from "./components/Widgets/TopNewsWidget/TopNews";
+import TopNews, {TopNewsContainer} from "./components/Widgets/TopNewsWidget/TopNews";
 import NewsFeedContainer from "./components/NewsFeed/NewsFeed";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
@@ -59,7 +59,7 @@ class App extends React.Component {
                                 </div>
 
                                 <div className={s.topNewsWidgetArea}>
-                                    <TopNews/>
+                                    <TopNewsContainer/>
                                 </div>
                             </div>
 
