@@ -1,21 +1,22 @@
 @import "src/components/common/GlobalMixins/GlobalMixin";
 
 @mixin body {
-    color: #444444;
-    line-height: 1.7;
-    font-size: 14px;
-    font-weight: 400;
-    background-color: #f1f1f1;
-    font-family: "Roboto", sans-serif;
+  color: #444444;
+  line-height: 1.7;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #f1f1f1;
+  font-family: "Roboto", sans-serif;
 }
+
 @mixin areasTemplate {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .appWrapper {
-    @include body;
-    display: block;
+  @include body;
+  display: block;
 }
 
 .appHeader {
@@ -23,57 +24,79 @@
 }
 
 .content {
-    @include body;
+  @include body;
 }
+
 .container {
-    width: 77%;
-    margin: 0 auto;
+  width: 77%;
+  margin: 0 auto;
 }
 
 .appBody {
-    padding: 80px 0 105px;
-    box-sizing: border-box;
+  padding: 80px 0 105px;
+  box-sizing: border-box;
 
-    display: grid;
-    width: 100%;
-    grid-template-areas: "widgetArea newsFeedArea infoArea";
-    grid-template-columns: 24fr 52fr 24fr;
-    grid-gap: 30px;
+  display: grid;
+  width: 100%;
+  grid-template-areas: "widgetArea newsFeedArea infoArea";
+  grid-template-columns: 24fr 52fr 24fr;
+  grid-gap: 30px;
 }
+
 .widgetArea {
-    @include areasTemplate;
-    display: grid;
-    grid-area: widgetArea;
-    grid-template-areas: 'cardProfileArea'
-                         'pagesWidgetArea'
-                         'topNewsWidgetArea';
-    grid-template-rows: 280px 355px 515px;
-    grid-row-gap: 30px;
-    .cardProfileWidgetArea {
+  @include areasTemplate;
+  display: grid;
+  grid-area: widgetArea;
+  grid-template-areas: 'cardProfileArea' 'pagesWidgetArea' 'topNewsWidgetArea';
+  grid-template-rows: 280px 355px 515px;
+  grid-row-gap: 30px;
 
-    }
-    .pagesWidgetArea {
+  .cardProfileWidgetArea {
 
-    }
-    .topNewsWidgetArea {
-        // Временная мера
-        margin-top: 20px;
-    }
+  }
+
+  .pagesWidgetArea {
+
+  }
+
+  .topNewsWidgetArea {
+    // Временная мера
+    margin-top: 20px;
+  }
 }
+
 .newsFeedArea {
-    @include areasTemplate;
-    display: grid;
-    grid-area: newsFeedArea;
+  @include areasTemplate;
+  display: grid;
+  grid-area: newsFeedArea;
 }
 
 .infoArea {
-    @include areasTemplate;
-    display: grid;
-    grid-area: infoArea;
+  @include areasTemplate;
+  display: grid;
+  grid-area: infoArea;
+
+  grid-template-areas: 'subNotificationArea' 'subAdvertiseArea' 'subFriendsZoneArea';
+  grid-template-rows: 545px 335px 385px;
+  grid-row-gap: 30px;
+
+    .subNotificationArea {
+        @include areasTemplate;
+        display: grid;
+        grid-area: subNotificationArea;
+    }
+    .subAdvertiseArea {
+        @include areasTemplate;
+        display: grid;
+        grid-area: subAdvertiseArea;
+    }
+    .subFriendsZoneArea {
+        @include areasTemplate;
+        display: grid;
+        grid-area: subFriendsZoneArea;
+    }
 }
-.contentAreaC {
-    @include globalContainersWrapper;
-}
+
 
 .appFooter {
 
