@@ -45,6 +45,7 @@
     .postSettingsBar {
       margin-left: auto;
       cursor: pointer;
+      position: relative;
       &:hover {
         span {
           background-color: #dc4734;
@@ -115,16 +116,21 @@
           }
         }
       }
-      .arrowShape:before {
-        right: 10px;
-        bottom: 100%;
-        content: "";
-        position: absolute;
-        height: 20px;
-        border-bottom: 20px solid #fff;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
+      .arrowShape {
+        right: 0;
+        top: 120%;
+        &:before {
+          right: 10px;
+          bottom: 100%;
+          content: "";
+          position: absolute;
+          height: 20px;
+          border-bottom: 20px solid #fff;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+        }
       }
+
       &:hover .postSettings {
         visibility: visible;
         opacity: 1;

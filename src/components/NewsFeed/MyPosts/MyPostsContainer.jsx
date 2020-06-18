@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
 // Эта ф-я передаёт state в пропсы.
-    debugger
+
     return {
         posts: state.profilePage.posts,
         newPostText: state.profilePage.newPostText,
@@ -14,7 +14,7 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
 //Эта ф-я передаёт коллбэки в пропсы.
-    debugger
+
     return {
         addPost: (newPostText) => {
             dispatch(addPostActionCreator(newPostText));

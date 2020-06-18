@@ -7,6 +7,7 @@ import React from "react";
 const maxLength1200 = maxLengthCreator(1200);
 
 const NewPostModal = (props) => {
+debugger
     return <div className={s.container}>
         <div className={s.header}>
             Share Your Mood
@@ -32,4 +33,4 @@ const NewPostModal = (props) => {
     </div>
 
 };
-export const NewPostModalContainer = reduxForm({form: 'post'})(NewPostModal);
+export const NewPostModalContainer = reduxForm({form: 'modalPost'})(NewPostModal);

@@ -19,6 +19,6 @@ export const RecentNotificationsContainer = (props) => {
         ],
 
     } );
-    debugger
+
     return <TopNews state={state} setState={setState}/>
 };
