@@ -47,6 +47,7 @@ const NewPostContainer = (props) => {
     const [showModal, setShowModal] = useState(false);
     let addNewPost = (values) => {
         props.addPost(values.newPostText);
+        setShowModal(false);
     };
     return <NewPost showModal={showModal}
                     setShowModal={setShowModal}

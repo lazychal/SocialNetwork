@@ -26,7 +26,7 @@ debugger
 
             <div className={s.footer}>
                 <button className={s.cancelBtn} onClick={() => props.setShowModal(false)}>CANCEL</button>
-                <button className={s.shareBtn} onClick={() => props.setShowModal(false)}>POST</button>
+                <button className={s.shareBtn} >POST</button>
             </div>
         </form>
 
