@@ -1,9 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './Post.module.scss'
 import {NavLink, withRouter} from "react-router-dom";
 import {compose} from "redux";
 import {connect, useDispatch, useSelector} from "react-redux";
 import {getUserProfile} from "../../../../redux/profile-reducer";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faShareAlt, faHeart as faHeart1} from "@fortawesome/free-solid-svg-icons";
+import {faComment, faHeart} from "@fortawesome/free-regular-svg-icons";
 
 const Post = (props) => {
     // Достаём userId из state
@@ -13,6 +16,7 @@ const Post = (props) => {
     useEffect(() => {
         dispatch(getUserProfile(userId))
     }, []);
+    const [isYouLikeIt, setIsYouLikeIt] = useState(false);
 
     return (
         <div className={s.card}>
@@ -55,13 +59,23 @@ const Post = (props) => {
             </div>
             <div className={s.postActions}>
                 <button className={s.postLikeBtn}>
-                    <i className={s.heartBeat}>
+                    {
+                        isYouLikeIt ?
+                            <FontAwesomeIcon icon={faHeart1} className={s.faHeartSolid}></FontAwesomeIcon>
+                            :
+                            <FontAwesomeIcon icon={faHeart} className={s.faHeart}
+                                             onClick={() => {setIsYouLikeIt(!isYouLikeIt)}}></FontAwesomeIcon>
+                    }
 
-                    </i>
-                    <span>
-                       {props.like} people like this
-                    </span>
+                    <span> {props.like} people like this </span>
+
                 </button>
+
+                <span className={s.commentShareContainer}>
+                    <FontAwesomeIcon icon={faComment} className={s.faComment}></FontAwesomeIcon> 47
+                    <FontAwesomeIcon icon={faShareAlt} className={s.faShareAlt}></FontAwesomeIcon> 25
+                </span>
+
                 <span>
                     <span>
 
