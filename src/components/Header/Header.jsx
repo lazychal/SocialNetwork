@@ -21,12 +21,12 @@ const Header = (props) => {
                 <div className={s.loginBlock}>
                     <div className={s.searchContainer}>
                         <form className={s.topSearchBox} action="">
-                            <input type="text" placeholder='Search' className={s.topSearchField}></input>
+                            <input type="text" placeholder='Search' className={s.topSearchField}/>
                             <button className={s.topSearchBtn}>S</button>
                         </form>
                     </div>
                     <div className={s.profileSettingBox}>
-                        <img src="" alt="User Photo Mini"/>
+                        <img className={s.userPhoto} src={props.userPic} alt="User Photo Mini"/>
                         {props.isAuth ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>
                             : <NavLink to={'/login'}>Login</NavLink>}
                     </div>

@@ -10,11 +10,11 @@ const NewsFeed = (props) => {
     return <div className={s.container}>
 
         <div className={s.newPostContainer}>
-            <NewPostContainer addPost={props.addPost}/>
+            <NewPostContainer addPost={props.addPost} userPic={props.userPic}/>
         </div>
 
         <div className={s.postsContainer}>
-            <MyPostsContainer/>
+            <MyPostsContainer posts={props.posts}/>
         </div>
 
     </div>
@@ -25,6 +25,7 @@ let mapStateToProps = (state) => {
     return {
         posts: state.profilePage.posts,
         newPostText: state.profilePage.newPostText,
+        userPic: state.profilePage.profile.photos.small
     }
 };
 

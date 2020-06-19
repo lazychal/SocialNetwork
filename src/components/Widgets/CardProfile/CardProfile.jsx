@@ -5,7 +5,7 @@ import {connect, useDispatch, useSelector} from "react-redux";
 import {NavLink, withRouter} from "react-router-dom";
 import {getStatus} from "../../../redux/profile-reducer";
 
-const CardProfile = ({fullName, status}) => {
+const CardProfile = ({fullName, status, userPic}) => {
 
     return <div className={s.container}>
         <div className={s.profileWidget}>
@@ -14,7 +14,8 @@ const CardProfile = ({fullName, status}) => {
                      alt="Profile Banner"
                      className={s.profileBannerSmall}
                 />
-                <img src="https://sun9-46.userapi.com/c637819/v637819780/546d9/aZtyhuT9wPE.jpg"
+                <img src={userPic}
+                     // src="https://sun9-46.userapi.com/c637819/v637819780/546d9/aZtyhuT9wPE.jpg"
                      alt="User Picture"
                      className={s.userPic}
                 />
@@ -39,13 +40,15 @@ const CardProfileContainer = (props) => {
     }, []);
     // Готово!
 
-    return <CardProfile fullName={props.fullName} status={props.status}/>
+    return <CardProfile fullName={props.fullName} status={props.status} userPic={props.userPic}/>
 };
 
 let mapStateToProps = (state) => {
+
     return {
         fullName: state.profilePage.profile.fullName,
         status: state.profilePage.status,
+        userPic: state.profilePage.profile.photos.small
     }
 };
 

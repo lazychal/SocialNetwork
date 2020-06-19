@@ -145,6 +145,13 @@ $bgColor: #FCFEFF;
 }
 .profileSettingBox {
 
+    .userPhoto {
+        vertical-align: middle;
+        border-style: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
 }
 
 @media (min-width: 768px){

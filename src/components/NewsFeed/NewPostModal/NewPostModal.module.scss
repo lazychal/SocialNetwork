@@ -54,8 +54,9 @@
         border: 1px solid #dddddd;
 
         // Отдельные стили для Field-а, который из redux-form
-        line-height: 44px;
+        line-height: inherit;
         resize: none;
+        white-space: pre;
       }
     }
     .footer {

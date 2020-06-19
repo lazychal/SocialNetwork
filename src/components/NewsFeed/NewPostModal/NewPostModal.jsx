@@ -2,12 +2,16 @@ import s from "./NewPostModal.module.scss";
 import {Field, reduxForm} from "redux-form";
 import {Textarea} from "../../common/FormControls/FormControls";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
-import React from "react";
+import React, {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {getStatus} from "../../../redux/profile-reducer";
 
 const maxLength1200 = maxLengthCreator(1200);
 
 const NewPostModal = (props) => {
-debugger
+
+
+
     return <div className={s.container}>
         <div className={s.header}>
             Share Your Mood
@@ -21,6 +25,8 @@ debugger
                        name='newPostText'
                        component={Textarea}
                        validate={[required, maxLength1200]}
+                       wrap="soft"
+                       cols='20'
                 />
             </div>
 
@@ -33,4 +39,4 @@ debugger
     </div>
 
 };
-export const NewPostModalContainer = reduxForm({form: 'modalPost'})(NewPostModal);
+export const NewPostModalReduxForm = reduxForm({form: 'modalPost'})(NewPostModal);

@@ -1,15 +1,17 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import s from "../NewsFeed.module.scss";
-import {NewPostModalContainer} from "../NewPostModal/NewPostModal";
+import {NewPostModalReduxForm} from "../NewPostModal/NewPostModal";
+import {useDispatch, useSelector} from "react-redux";
+import {getStatus} from "../../../redux/profile-reducer";
 
-const NewPost = ({showModal, setShowModal, addNewPost}) => {
+const NewPost = ({showModal, setShowModal, addNewPost, userPic}) => {
 
 
     return <div className={s.newPost}>
 
         <div className={s.userThumb}>
             <a href="#">
-                <img src="https://sun9-46.userapi.com/c637819/v637819780/546d9/aZtyhuT9wPE.jpg"
+                <img src={userPic}
                      alt="User Picture"
                 />
             </a>
@@ -34,7 +36,7 @@ const NewPost = ({showModal, setShowModal, addNewPost}) => {
         </div>
         <div className={showModal ? s.show : s.fade}>
             {
-                showModal && <NewPostModalContainer setShowModal={setShowModal} showModal={showModal} onSubmit={addNewPost}/>
+                showModal && <NewPostModalReduxForm setShowModal={setShowModal} showModal={showModal} onSubmit={addNewPost}/>
             }
 
         </div>
@@ -49,9 +51,17 @@ const NewPostContainer = (props) => {
         props.addPost(values.newPostText);
         setShowModal(false);
     };
+    const {userId} = useSelector((state) => state.auth);
+    // Диспатчим санку
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getStatus(userId))
+    }, []);
     return <NewPost showModal={showModal}
                     setShowModal={setShowModal}
-                    addNewPost={addNewPost} />
+                    addNewPost={addNewPost}
+                    userPic={props.userPic}
+    />
 
 };
 
