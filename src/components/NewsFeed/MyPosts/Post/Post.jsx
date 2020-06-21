@@ -17,13 +17,13 @@ const Post = (props) => {
         dispatch(getUserProfile(userId))
     }, []);
     const [isYouLikeIt, setIsYouLikeIt] = useState(false);
-
+debugger
     return (
         <div className={s.card}>
             <div className={s.postTitle}>
                 <div className={s.userThumb}>
                     <a href="#">
-                        <img src='https://pp.userapi.com/c851320/v851320155/5ec09/B_32nSfM78A.jpg?ava=1'
+                        <img src={props.userPic}
                              alt='User Thumb'
                         />
                     </a>
@@ -90,13 +90,14 @@ const Post = (props) => {
 };
 
 const PostContainer = (props) => {
-    return <Post fullName={props.fullName} message={props.message} like={props.like}/>
+    return <Post fullName={props.fullName} message={props.message} like={props.like} userPic={props.userPic}/>
 
 };
 
 let mapStateToProps = (state) => {
     return {
         fullName: state.profilePage.profile.fullName,
+        userPic: state.profilePage.profile.photos.small
     }
 };
 

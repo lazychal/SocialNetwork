@@ -2,7 +2,7 @@
   background-color: #fff;
   border: none;
   border-radius: 0;
-  padding: 30px;
+  padding: 25px;
   margin-bottom: 30px;
   -webkit-box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
   box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
@@ -34,5 +34,28 @@
   transition: 0.4s;
   &:hover {
     background-color: rgb(74, 74, 74);
+  }
+}
+
+@mixin widgetsTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 45px;
+  text-transform: capitalize;
+  position: relative;
+  &:hover, &:active {
+    color: #dc4734;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  &:before {
+    bottom: -4px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    content: "";
+    position: absolute;
+    background-color: #dc4734;
   }
 }

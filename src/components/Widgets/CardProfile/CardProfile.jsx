@@ -15,7 +15,6 @@ const CardProfile = ({fullName, status, userPic}) => {
                      className={s.profileBannerSmall}
                 />
                 <img src={userPic}
-                     // src="https://sun9-46.userapi.com/c637819/v637819780/546d9/aZtyhuT9wPE.jpg"
                      alt="User Picture"
                      className={s.userPic}
                 />

@@ -7,10 +7,12 @@ import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/preloader/Preloader";
 import CardProfile from "./components/Widgets/CardProfile/CardProfile";
-import CardInterestingPages from "./components/Widgets/CardInterestingPages/CardInterestingPages";
-import TopNews, {TopNewsContainer} from "./components/Widgets/TopNewsWidget/TopNews";
+import {CardInterestingPagesContainer} from "./components/Widgets/CardInterestingPages/CardInterestingPages";
+import {TopNewsContainer} from "./components/Widgets/TopNewsWidget/TopNews";
 import NewsFeedContainer from "./components/NewsFeed/NewsFeed";
-import {RecentNotificationsContainer} from "./components/AnotherWidgets/RecentNotifications/RecentNotifications";
+import {RecentNotificationsContainer} from "./components/AnotherWidgets/RecentNotifications/RecentNotificationsContainer";
+import Advertisement from "./components/AnotherWidgets/Advertisement/Advertisement";
+import FriendsZoneContainer from "./components/AnotherWidgets/FriendsZone/FriendsZone";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
@@ -55,7 +57,7 @@ class App extends React.Component {
                                 </div>
                                 <div className={s.pagesWidgetArea}>
                                     {/*<NavBar/> */}
-                                    <CardInterestingPages/>
+                                    <CardInterestingPagesContainer/>
                                 </div>
 
                                 <div className={s.topNewsWidgetArea}>
@@ -78,10 +80,10 @@ class App extends React.Component {
                                     <RecentNotificationsContainer />
                                 </div>
                                 <div className={s.subAdvertiseArea}>
-
+                                    <Advertisement/>
                                 </div>
                                 <div className={s.subFriendsZoneArea}>
-
+                                    <FriendsZoneContainer/>
                                 </div>
 
                             </div>
