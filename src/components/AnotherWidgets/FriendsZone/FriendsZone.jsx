@@ -7,7 +7,7 @@ import CardInterestingPages from "../../Widgets/CardInterestingPages/CardInteres
 import {connect} from "react-redux";
 
 const FriendsZoneContainer = ({userPic}) => {
-    debugger
+
     const myPic = userPic;
     const [state, setState] = useState({
         pageTitle: 'The Page You May Like',

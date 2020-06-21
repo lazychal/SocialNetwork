@@ -17,7 +17,8 @@ const Post = (props) => {
         dispatch(getUserProfile(userId))
     }, []);
     const [isYouLikeIt, setIsYouLikeIt] = useState(false);
-debugger
+
+
     return (
         <div className={s.card}>
             <div className={s.postTitle}>

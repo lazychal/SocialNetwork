@@ -48,21 +48,27 @@
   @include areasTemplate;
   display: grid;
   grid-area: widgetArea;
-  grid-template-areas: 'cardProfileArea' 'pagesWidgetArea' 'topNewsWidgetArea';
-  grid-template-rows: 280px 355px 515px;
+  grid-template-areas: 'SubCardProfileWidgetArea' 'SubPagesWidgetArea' 'SubTopNewsWidgetArea' 'SubGetUsersWidgetArea';
+  grid-template-rows: 280px 355px 445px 515px;
   grid-row-gap: 30px;
 
-  .cardProfileWidgetArea {
-
+  .SubCardProfileWidgetArea {
+    display: grid;
+    grid-area: SubCardProfileWidgetArea;
   }
-
-  .pagesWidgetArea {
-
+  .SubPagesWidgetArea {
+    display: grid;
+    grid-area: SubPagesWidgetArea;
   }
+  .SubTopNewsWidgetArea {
+    display: grid;
+    grid-area: SubTopNewsWidgetArea
+  }
+  .SubGetUsersWidgetArea {
+    display: grid;
+    grid-area: SubGetUsersWidgetArea;
 
-  .topNewsWidgetArea {
-    // Временная мера
-    margin-top: 20px;
+    margin-top: -25px;
   }
 }
 
