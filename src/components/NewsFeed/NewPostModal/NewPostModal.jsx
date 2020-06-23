@@ -2,9 +2,7 @@ import s from "./NewPostModal.module.scss";
 import {Field, reduxForm} from "redux-form";
 import {Textarea} from "../../common/FormControls/FormControls";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
-import React, {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {getStatus} from "../../../redux/profile-reducer";
+import React from "react";
 
 const maxLength1200 = maxLengthCreator(1200);
 

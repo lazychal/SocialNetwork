@@ -15,8 +15,8 @@ import Advertisement from "./components/AnotherWidgets/Advertisement/Advertiseme
 import FriendsZoneContainer from "./components/AnotherWidgets/FriendsZone/FriendsZone";
 import GetUsersContainer from "./components/Widgets/Users/GetUsers";
 
-const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
-const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
+// const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
+// const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 
 class App extends React.Component {
     catchAllUnhandledErrors = (reason, promise) => {

@@ -6,14 +6,14 @@ import seafoodPic from '../../../assets/images/interestPagesWidgetThumbs/Seafood
 import CardInterestingPages from "../../Widgets/CardInterestingPages/CardInterestingPages";
 import {connect} from "react-redux";
 
-const FriendsZoneContainer = ({userPic}) => {
+const FriendsZoneContainer = () => {
 
-    const myPic = userPic;
+
     const [state, setState] = useState({
         pageTitle: 'The Page You May Like',
         note: [
             {img: adventurePic, title: 'Travel Around Asia', subTitle: 'Adventure'},
-            {img: myPic, title: 'Food-court Funny Octopus', subTitle: 'Sea Food'},
+            {img: seafoodPic, title: 'Food-court Funny Octopus', subTitle: 'Sea Food'},
             {img: comedyPic, title: 'Bob Summer', subTitle: 'Comedy'},
             {img: MMAPic, title: 'Muscle Mind', subTitle: 'MMA'},
         ],
