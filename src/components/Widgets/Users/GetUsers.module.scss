@@ -19,6 +19,13 @@
 
   .widgetBody {
 
+    .usersList {
+      list-style-type: none;
+      padding: 0;
+      li {
+        padding-top: 10px;
+      }
+    }
   }
 
 }

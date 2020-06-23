@@ -1,11 +1,11 @@
 import React from "react";
-import s from "./users.module.css";
+import s from "./users.module.scss";
 import userPhoto from "../../assets/images/user.png";
 import {NavLink} from "react-router-dom";
 
 let User = ({user, followingInProgress, unfollow, follow}) => {
 
-    return <div>
+    return <div className={s.container}>
                 <span>
                     <div>
                         <NavLink to={'/profile/' + user.id}>
@@ -13,7 +13,7 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
                                  className={s.userPhoto}/>
                         </NavLink>
                     </div>
-                    <div>
+                    <div className={s.buttons}>
                         {user.followed
                             ? <button disabled={followingInProgress.some(id => id === user.id)}
                                       onClick={() => {
@@ -33,16 +33,19 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
                     </div>
                 </span>
                 <span>
-                    <span>
-                        <div>{user.name}</div>
-                        <div>{user.status}</div>
+                    <span className={s.userInfo}>
+                        <div className={s.userName}>{user.name}</div>
+                        <div className={s.userStatus}>{
+                            user.status.length < 20 ? user.status : user.status.slice(0,19) + '...'
+                        }</div>
                     </span>
-                    <span>
-                        <div>{'user.location.country'}</div>
-                        <div>{'user.location.city'}</div>
-                    </span>
+                    {/*<span className={s.userLocation}>*/}
+                    {/*    <div>{'user.location.country'}</div>*/}
+                    {/*    <div>{'user.location.city'}</div>*/}
+                    {/*</span>*/}
                 </span>
     </div>
 };
+
 
 export default User;

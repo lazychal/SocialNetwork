@@ -11,7 +11,7 @@ let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, users, ...p
         />
 
         <div>
-            {users.map(u =>
+            {users.filter(u => u.photos.small !== null).map(u =>
                 <User user={u}
                       key={u.id}
                       followingInProgress={props.followingInProgress}

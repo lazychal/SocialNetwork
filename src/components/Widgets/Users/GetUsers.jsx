@@ -11,7 +11,7 @@ const GetUsers = ({users, followingInProgress}) => {
     return <div className={s.container}>
         <h4 className={s.widgetTitle}>Users</h4>
         <div className={s.widgetBody}>
-            <ul>
+            <ul className={s.usersList}>
 
                 {users.map(u =>
                     <li>
@@ -31,7 +31,13 @@ const GetUsers = ({users, followingInProgress}) => {
 const GetUsersContainer = (props) => {
 
     const dispatch = useDispatch();
-    useEffect(() => { dispatch(props.getUsers)}, []);
+    useEffect(() => {
+        if(props.users.length <5 ){
+
+            dispatch(props.getUsers)
+        }
+        }, [props.users]
+    );
     return <GetUsers users={props.users} followingInProgress={props.followingInProgress}/>
 };
 

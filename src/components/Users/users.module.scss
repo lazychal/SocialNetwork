@@ -1,0 +1,45 @@
+
+
+.container {
+  display: flex;
+  .userPhoto {
+    width: 45px;
+    height: 45px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .buttons {
+    visibility: hidden;
+    .unfollow {
+      border-radius: 1px;
+      cursor: pointer;
+    }
+    .follow {
+      border-radius: 1px;
+      cursor: pointer;
+    }
+  }
+  .userInfo {
+
+    .userName {
+
+    }
+    .userStatus {
+      font-size: 12px;
+    }
+  }
+  .userLocation {
+    font-size: 12px;
+  }
+}
+
+
+.preloader {
+  width: 120px;
+  height: auto;
+  position: absolute;
+  z-index: 9999;
+  margin: 250px;
+}

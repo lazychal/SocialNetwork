@@ -11,9 +11,9 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
 
 let initialState = {
     users: [],
-    pageSize: 10,
+    pageSize: 100,
     totalUsersCount: 0,
-    currentPage: 1,
+    currentPage: 0,
     isFetching: false,
     followingInProgress: [],
 };
@@ -73,15 +73,18 @@ export const toggleFollowingProgress = (isFetching, userId) => ({
     userId
 });
 
-export const requestUsers = (page, pageSize) => {
-    
-    return async (dispatch) => {
-        dispatch(toggleIsFetching(true));
-        dispatch(setCurrentPage(page));
+export const requestUsers = () => {
 
-        let data = await usersAPI.getUsers(page, pageSize);
+    return async (dispatch, getState) => {
+        const {currentPage, pageSize} = getState().usersPage;
+        dispatch(toggleIsFetching(true));
+        dispatch(setCurrentPage(currentPage+1));
+
+        let data = await usersAPI.getUsers(currentPage+1, pageSize);
+        debugger
+        let someUsers = data.items.filter(user => user.photos.small && user.status);
         dispatch(toggleIsFetching(false));
-        dispatch(setUsers(data.items));
+        dispatch(setUsers(someUsers));
         dispatch(setTotalUsersCount(data.totalCount));
     }
 };
