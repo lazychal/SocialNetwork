@@ -18,18 +18,7 @@ const Post = (props) => {
     }, []);
     const [isYouLikeIt, setIsYouLikeIt] = useState(false);
 
-    let validMessage = (m) => {
-        let message = '';
-        while (m.length > 55) {
-            if (m.length < 55) {
-                message += m;
-            } else {
-                message += m.slice(0, 54) + '\n';
-                m = m.slice(54)
-            }
-        }
-        return message;
-    };
+
 
     return (
         <div className={s.card}>
@@ -68,7 +57,9 @@ const Post = (props) => {
 
             </div>
             <div className={s.postContent}>
-                { validMessage(props.message) }
+                {
+                    props.validMessage(props.message)
+                }
             </div>
             <div className={s.postActions}>
                 <button className={s.postLikeBtn}>
@@ -105,8 +96,23 @@ const Post = (props) => {
 };
 
 const PostContainer = (props) => {
-    return <Post fullName={props.fullName} message={props.message} like={props.like} userPic={props.userPic}/>
 
+    let validMessage = (m) => {
+        let message = props.message.length < 55 ? props.message : '';
+        while (m.length > 55) {
+            if (m.length < 55) {
+                message += m;
+            } else {
+                message += m.slice(0, 54) + '\n';
+                m = m.slice(54)
+            }
+        }
+        return message;
+    };
+
+    return <Post fullName={props.fullName} message={props.message}
+                 like={props.like} userPic={props.userPic} validMessage={validMessage}
+    />
 };
 
 let mapStateToProps = (state) => {

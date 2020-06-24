@@ -9,7 +9,6 @@ const maxLength1200 = maxLengthCreator(1200);
 const NewPostModal = (props) => {
 
 
-
     return <div className={s.container}>
         <div className={s.header}>
             Share Your Mood
@@ -27,14 +26,11 @@ const NewPostModal = (props) => {
                        cols='20'
                 />
             </div>
-
             <div className={s.footer}>
                 <button className={s.cancelBtn} onClick={() => props.setShowModal(false)}>CANCEL</button>
-                <button className={s.shareBtn} >POST</button>
+                <button className={s.shareBtn}>POST</button>
             </div>
         </form>
-
     </div>
-
 };
 export const NewPostModalReduxForm = reduxForm({form: 'modalPost'})(NewPostModal);
