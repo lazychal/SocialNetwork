@@ -36,44 +36,33 @@ class App extends React.Component {
     }
 
     render() {
-        if (!this.props.initialized) {
-            return <Preloader/>
-        }
+        if (!this.props.initialized) { return <Preloader/> }
 
         return (
 
             <div className={s.appWrapper}>
-                
+
                 <div className={s.appHeader}>
                     <HeaderContainer/>
                 </div>
                 <div className={s.content}>
                     <div className={s.container}>
                         <div className={s.appBody}>
-
                             <div className={s.widgetArea}>
                                 <div className={s.SubCardProfileWidgetArea}>
                                     <CardProfile/>
                                 </div>
                                 <div className={s.SubPagesWidgetArea}>
-                                    {/*<NavBar/> */}
                                     <CardInterestingPagesContainer/>
                                 </div>
 
                                 <div className={s.SubTopNewsWidgetArea}>
                                     <TopNewsContainer/>
                                 </div>
-                                {/*<div className={s.SubGetUsersWidgetArea}>*/}
-                                {/*    <GetUsersContainer/>*/}
-                                {/*</div>*/}
                             </div>
 
                             <div className={s.newsFeedArea}>
-
                                 <NewsFeedContainer/>
-
-                                {/*<NewsFeed/>*/}
-
                             </div>
 
                             <div className={s.infoArea}>
@@ -89,7 +78,6 @@ class App extends React.Component {
                                 </div>
 
                             </div>
-
                         </div>
 
                         <div className={s.appFooter}>
@@ -97,7 +85,6 @@ class App extends React.Component {
                         </div>
                     </div>
                 </div>
-
 
             </div>
 

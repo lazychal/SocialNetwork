@@ -3,6 +3,7 @@ import s from './Header.module.scss'
 import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
+    debugger
     return <header className={s.header}>
         <div className={s.container}>
 
@@ -26,7 +27,31 @@ const Header = (props) => {
                         </form>
                     </div>
                     <div className={s.profileSettingBox}>
-                        <img className={s.userPhoto} src={props.userPic} alt="UserData Mini"/>
+                        {/*<a className={s.profileTrigger} href="" >*/}
+                            <img className={s.userPhoto} src={props.userPic} alt="UserData Mini"/>
+                        {/*</a>*/}
+                            <div className={s.profileDropdown}>
+                                <div className={s.profileHead}>
+                                    <h5 className={s.fullName}>
+                                        <NavLink to={'/'}>
+                                            {props.fullName}
+                                        </NavLink>
+                                    </h5>
+                                    <NavLink to={'/'} className={s.email}>email@email.com</NavLink>
+                                </div>
+                                <div className={s.profileBody}>
+                                    <ul>
+                                        <li>Profile</li>
+                                        <li>Inbox</li>
+                                        <li>Activity</li>
+                                    </ul>
+                                    <ul>
+                                        <li>Settings</li>
+                                        <li>Sign Out</li>
+                                    </ul>
+                                </div>
+                            </div>
+
                         {props.isAuth ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>
                             : <NavLink to={'/login'}>Login</NavLink>}
                     </div>

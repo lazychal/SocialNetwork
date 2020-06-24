@@ -1,180 +1,218 @@
 // Переменная с цветом. Например, для всего фона сайта или для всех блоков.
 $bgColor: #FCFEFF;
 
-//Миксин (mixin). Шаблон для блоков, набор свойств.
-// Чтобы применить этот шаблон, пишется внутри, например "header", следующая запись:
-// @include fontSize; или +fontSize;
+
 @mixin fontSize {
-    font-size: 1.1em;
-    font-weight: normal;
-    font-family: Arial, sans-serif;
-    // Переменная тоже может быть параметром миксина:
-    color: $bgColor;
+  font-size: 1.1em;
+  font-weight: normal;
+  font-family: Arial, sans-serif;
+  // Переменная тоже может быть параметром миксина:
+  color: $bgColor;
 }
 
-// Применение :hover или любых других псевдоклассов:
-// a {
-//  &:hover {
-//      ...do something
-//  }
-// }
 
 // Миксин с параметрами
-@mixin link ($link, $hover, $active, $visited) {
-    a {
-        color: $link;
-    }
-    link:hover {
-        color: $hover;
-    }
-    link:active {
-        color: $active;
-    }
-    link:visited {
-        color: $visited;
-    }
+@mixin link($link, $hover, $active, $visited) {
+  a {
+    color: $link;
+  }
+  link:hover {
+    color: $hover;
+  }
+  link:active {
+    color: $active;
+  }
+  link:visited {
+    color: $visited;
+  }
 }
+
 // Применение. Цвета можно передавать в любом формате.
 @include link(red, green, blue, purple);
 
-// Импорт переменных и миксинов из файла:
-// @import "путь к файлу";
-
+@import "src/components/common/GlobalMixins/GlobalMixin";
 
 @mixin body {
-    color: #444444;
-    line-height: 1.7;
-    font-size: 14px;
-    font-weight: 400;
-    background-color: #f1f1f1;
-    font-family: "Roboto", sans-serif;
+  color: #444444;
+  line-height: 1.7;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #f1f1f1;
+  font-family: "Roboto", sans-serif;
 }
+
 @mixin li-navigation {
-    display: inline-block;
-    margin-right: 60px;
-    position: relative;
+  display: inline-block;
+  margin-right: 60px;
+  position: relative;
 }
+
 @mixin mainMenu-ul-li-navLink {
-    color: #333333;
-    display: block;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1;
-    padding: 21px 0;
-    text-transform: capitalize;
+  color: #333333;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 21px 0;
+  text-transform: capitalize;
 }
 
 .header {
-    @include body;
-    /*grid-area: h;*/
-    top: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    background-color: #fff;
-    z-index: 100;
-    -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
-    img {
-        width: 50px;
-    }
+  @include body;
+  /*grid-area: h;*/
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
+  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
+
+  img {
+    width: 50px;
+  }
 }
+
 .container {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 auto;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .mainMenu {
-    li {
-        @include li-navigation;
-    }
-    ul li .navLink{
-        @include mainMenu-ul-li-navLink;
-    }
-    ul li:hover .navLink, ul li:active .navLink {
-        color: #dc4734;
-        transition: 0.4s;
-    }
-    .navLink:hover, .navLink:focus {
-        outline: none;
-        text-decoration: none;
-    }
-    .navLink {
-        text-decoration: none;
-    }
-    .navUl {
-        margin: 0;
-        padding: 0;
-    }
+  li {
+    @include li-navigation;
+  }
+
+  ul li .navLink {
+    @include mainMenu-ul-li-navLink;
+  }
+
+  ul li:hover .navLink, ul li:active .navLink {
+    color: #dc4734;
+    transition: 0.4s;
+  }
+
+  .navLink:hover, .navLink:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  .navLink {
+    text-decoration: none;
+  }
+
+  .navUl {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 
 .logo {
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
+
 .loginBlock {
-    display: flex;
+  display: flex;
 }
+
 .searchContainer {
-    margin-right: 25px;
+  margin-right: 25px;
 }
+
 .topSearchBox {
-    min-width: 250px;
-    position: relative;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ddd;
+  min-width: 250px;
+  position: relative;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
 }
+
 .topSearchField {
-    border: none;
-    width: 100%;
-    padding-right: 30px;
-    background-color: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 30px;
+  background-color: transparent;
 }
+
 .topSearchBtn {
-    top: 0;
-    right: 0;
-    font-size: 20px;
-    position: absolute;
-    color: #333333;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  position: absolute;
+  color: #333333;
 }
+
 .profileSettingBox {
+  position: relative;
+  .userPhoto {
+    vertical-align: middle;
+    border-style: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  .profileDropdown {
+    width: 250px;
+    height: 290px;
+    position: absolute;
+    right: 85px;
+    @include globalContainersWrapper;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: auto;
+    .profileHead {
+      padding: 20px;
+      .fullName {
+        margin: 0;
+      }
+      .email {
 
-    .userPhoto {
-        vertical-align: middle;
-        border-style: none;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
+      }
     }
+    .profileBody {
+
+      ul {
+        margin: 0 0 0 35px;
+        padding: 20px 0;
+        border-top: 1px solid #dddddd;
+
+        li {
+
+
+        }
+      }
+    }
+  }
 }
 
-@media (min-width: 768px){
-    .mainMenu {
-        -ms-flex: 0 0 41.666667%;
-        flex: 0 0 41.666667%;
-        max-width: 41.666667%;
-    }
+@media (min-width: 768px) {
+  .mainMenu {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
 }
 
-@media (min-width: 768px){
-    .logo {
-        -ms-flex: 0 0 16.666667%;
-        flex: 0 0 16.666667%;
-        max-width: 16.666667%;
-    }
+@media (min-width: 768px) {
+  .logo {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
 }
 
-@media (min-width: 768px){
-    .loginBlock {
-        -ms-flex: 0 0 41.666667%;
-        max-width: 41.666667%;
-    }
+@media (min-width: 768px) {
+  .loginBlock {
+    -ms-flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
 }
 
 
