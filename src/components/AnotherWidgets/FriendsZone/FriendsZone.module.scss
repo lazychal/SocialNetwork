@@ -1,0 +1,44 @@
+@import "src/components/common/GlobalMixins/GlobalMixin";
+
+.container {
+  @include globalContainersWrapper;
+
+  .widgetTitle {
+    @include widgetsTitle;
+      margin: 0;
+  }
+
+  .widgetBody {
+      .usersList {
+          margin: 0;
+          padding: 0;
+          .listItem {
+              list-style-type: none;
+              display: flex;
+              align-items: center;
+              .likeButton {
+                  font-size: 20px;
+                  margin-left: auto;
+                  position: relative;
+                  border: none;
+                  background-color: transparent;
+                  cursor: pointer;
+                  outline: 1px transparent;
+                  &:hover .heartColor{
+                      visibility: visible;
+                  }
+                  .heart {
+                      position: absolute;
+                      right: 0;
+                  }
+
+                  .heartColor {
+                      position: absolute;
+                      visibility: hidden;
+                      right: 0;
+                  }
+              }
+          }
+      }
+  }
+}

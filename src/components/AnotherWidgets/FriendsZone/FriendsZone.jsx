@@ -1,37 +1,56 @@
-import React, {useState} from 'react';
-import adventurePic from '../../../assets/images/interestPagesWidgetThumbs/Adventure-Picture.jpg';
-import comedyPic from '../../../assets/images/interestPagesWidgetThumbs/Comedy-Picture.jpg';
-import MMAPic from '../../../assets/images/interestPagesWidgetThumbs/MMA-Picture.jpg';
-import seafoodPic from '../../../assets/images/interestPagesWidgetThumbs/Seafood-Picture.jpeg';
-import CardInterestingPages from "../../Widgets/CardInterestingPages/CardInterestingPages";
-import {connect} from "react-redux";
+import React, {useEffect} from 'react';
+import {connect, useDispatch} from "react-redux";
+import {getFollowingInProgress, getIsFetching, getUsers} from "../../../redux/users-selectors";
+import {compose} from "redux";
+import {requestUsers, toggleFollowingProgress} from "../../../redux/users-reducer";
+import User from "../../Users/User";
+import s from "./FriendsZone.module.scss";
+import heart from "../../../assets/images/icons/heart.png";
+import heartColor from "../../../assets/images/icons/heart-color.png";
 
-const FriendsZoneContainer = () => {
+const FriendsZone = ({users, followingInProgress}) => {
 
-
-    const [state, setState] = useState({
-        pageTitle: 'The Page You May Like',
-        note: [
-            {img: adventurePic, title: 'Travel Around Asia', subTitle: 'Adventure'},
-            {img: seafoodPic, title: 'Food-court Funny Octopus', subTitle: 'Sea Food'},
-            {img: comedyPic, title: 'Bob Summer', subTitle: 'Comedy'},
-            {img: MMAPic, title: 'Muscle Mind', subTitle: 'MMA'},
-        ],
-
-        isYouLikeIt: false
-
-    } );
-
-    return <CardInterestingPages state={state} setState={setState}/>
+    return <div className={s.container}>
+        <h4 className={s.widgetTitle}>Find Your Friends</h4>
+        <div className={s.widgetBody}>
+            <ul className={s.usersList}>
+                {
+                    users.map(u =>
+                    <li className={s.listItem}>
+                        <User user={u}
+                              key={u.id}
+                              followingInProgress={followingInProgress}
+                        />
+                        <button className={s.likeButton}>
+                            <img className={s.heart} src={heart} alt="Heart"/>
+                            <img className={s.heartColor} src={heartColor} alt="Red Heart"/>
+                        </button>
+                    </li>
+                    )
+                }
+            </ul>
+        </div>
+    </div>
+};
+const FriendsZoneContainer = (props) => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+            if(props.users.length <5 ){
+                dispatch(props.getUsers)
+            }
+        }, [props.users]
+    );
+    return <FriendsZone users={props.users} followingInProgress={props.followingInProgress}/>
 };
 
 let mapStateToProps = (state) => {
-
     return {
-        userPic: state.profilePage.profile.photos.small
+        users: getUsers(state),
+        isFetching: getIsFetching(state),
+        followingInProgress: getFollowingInProgress(state),
     }
 };
 
-export default connect(mapStateToProps, {})(FriendsZoneContainer);
-
-// export default CardInterestingPages;
+export default compose(
+    connect(mapStateToProps, {toggleFollowingProgress, getUsers: requestUsers})
+)(FriendsZoneContainer);

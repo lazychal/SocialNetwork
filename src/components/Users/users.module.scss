@@ -2,13 +2,60 @@
 
 .container {
   display: flex;
-  .userPhoto {
-    width: 45px;
-    height: 45px;
-    display: block;
-    border-radius: 50%;
-    overflow: hidden;
+  .listItemThumb {
+    .navLink {
+      color: #007bff;
+      text-decoration: none;
+      background-color: transparent;
+      transition: 0.4s;
+      img {
+        width: 45px;
+        height: 45px;
+        display: block;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    .listItemInfo {
+      padding-left: 10px;
+      .itemTitle {
+        margin-bottom: 0;
+        a {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 1.3;
+          padding-bottom: 3px;
+          color: #333333;
+          margin-bottom: 0;
+          text-decoration: none;
+          &:hover {
+            color: #dc4734;
+            transition: 0.4s;
+          }
+        }
+      }
+
+      .itemSubtitle {
+        margin-top: 0;
+        a {
+          font-size: 12px;
+          font-weight: 400;
+          color: #666666;
+          text-transform: capitalize;
+          margin: 0;
+          text-decoration: none;
+          &:hover {
+            color: #dc4734;
+            transition: 0.4s;
+          }
+        }
+      }
+      .itemSubtitle:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
+
 
   .buttons {
     visibility: hidden;

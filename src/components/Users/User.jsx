@@ -7,10 +7,10 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
 
     return <div className={s.container}>
                 <span>
-                    <div>
-                        <NavLink to={'/profile/' + user.id}>
+                    <div className={s.listItemThumb}>
+                        <NavLink to={'/profile/' + user.id} className={s.navLink}>
                             <img alt='user picture' src={user.photos.small !== null ? user.photos.small : userPhoto}
-                                 className={s.userPhoto}/>
+                                 />
                         </NavLink>
                     </div>
                     <div className={s.buttons}>
@@ -33,12 +33,15 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
                     </div>
                 </span>
                 <span>
-                    <span className={s.userInfo}>
-                        <div className={s.userName}>{user.name}</div>
-                        <div className={s.userStatus}>{
-                            user.status.length < 20 ? user.status : user.status.slice(0,19) + '...'
-                        }</div>
-                    </span>
+                    <div className={s.listItemInfo}>
+                        <h3 className={s.itemTitle}><a href="#">{user.name}</a></h3>
+                        <p className={s.itemSubtitle}>
+                            <a href="#">
+                                { user.status.length < 20 ? user.status
+                                    : user.status.slice(0,19) + '...' }
+                            </a>
+                        </p>
+                    </div>
                     {/*<span className={s.userLocation}>*/}
                     {/*    <div>{'user.location.country'}</div>*/}
                     {/*    <div>{'user.location.city'}</div>*/}

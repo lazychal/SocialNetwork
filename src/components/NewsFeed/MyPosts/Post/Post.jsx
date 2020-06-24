@@ -18,6 +18,18 @@ const Post = (props) => {
     }, []);
     const [isYouLikeIt, setIsYouLikeIt] = useState(false);
 
+    let validMessage = (m) => {
+        let message = '';
+        while (m.length > 55) {
+            if (m.length < 55) {
+                message += m;
+            } else {
+                message += m.slice(0, 54) + '\n';
+                m = m.slice(54)
+            }
+        }
+        return message;
+    };
 
     return (
         <div className={s.card}>
@@ -56,7 +68,7 @@ const Post = (props) => {
 
             </div>
             <div className={s.postContent}>
-                {props.message}
+                { validMessage(props.message) }
             </div>
             <div className={s.postActions}>
                 <button className={s.postLikeBtn}>
@@ -65,7 +77,9 @@ const Post = (props) => {
                             <FontAwesomeIcon icon={faHeart1} className={s.faHeartSolid}></FontAwesomeIcon>
                             :
                             <FontAwesomeIcon icon={faHeart} className={s.faHeart}
-                                             onClick={() => {setIsYouLikeIt(!isYouLikeIt)}}></FontAwesomeIcon>
+                                             onClick={() => {
+                                                 setIsYouLikeIt(!isYouLikeIt)
+                                             }}></FontAwesomeIcon>
                     }
 
                     <span> {props.like} people like this </span>
