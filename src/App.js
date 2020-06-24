@@ -13,15 +13,14 @@ import NewsFeedContainer from "./components/NewsFeed/NewsFeed";
 import {RecentNotificationsContainer} from "./components/AnotherWidgets/RecentNotifications/RecentNotificationsContainer";
 import Advertisement from "./components/AnotherWidgets/Advertisement/Advertisement";
 import FriendsZoneContainer from "./components/AnotherWidgets/FriendsZone/FriendsZone";
-import GetUsersContainer from "./ZIP/Users/GetUsers";
 
 // const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 // const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 
 class App extends React.Component {
     catchAllUnhandledErrors = (reason, promise) => {
-        alert('Something is Bad...');
-        // console.error(promise)
+        // alert('Something is Bad...');
+        console.error(promise + 'Something is Bad...')
     };
 
     componentDidMount() {
@@ -44,7 +43,7 @@ class App extends React.Component {
         return (
 
             <div className={s.appWrapper}>
-
+                
                 <div className={s.appHeader}>
                     <HeaderContainer/>
                 </div>
@@ -78,10 +77,9 @@ class App extends React.Component {
                             </div>
 
                             <div className={s.infoArea}>
-                                {/*При заполнении, убрать эту дивку, и положить сюда компонент
-                                или компоненты в дивках*/}
+
                                 <div className={s.subNotificationArea}>
-                                    <RecentNotificationsContainer />
+                                    <RecentNotificationsContainer/>
                                 </div>
                                 <div className={s.subAdvertiseArea}>
                                     <Advertisement/>

@@ -1,9 +1,12 @@
 import React from "react";
 import preloader from "../../../assets/images/loading.gif";
-import styles from "../../Users/users.module.scss";
 
-let Preloader = (props) => {
-    return <img src={preloader} className={styles.preloader} alt='Preloader'/>
+const style = { width: '150px', position: 'absolute', left: '46%', top: '40%', zIndex: '100' };
+
+const Preloader = () => {
+    return <img src={preloader}
+                style={style}
+                alt='Preloader'/>
 };
 
 export default Preloader;
