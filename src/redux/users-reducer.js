@@ -81,7 +81,7 @@ export const requestUsers = () => {
         dispatch(setCurrentPage(currentPage+1));
 
         let data = await usersAPI.getUsers(currentPage+1, pageSize);
-        debugger
+
         let someUsers = data.items.filter(user => user.photos.small && user.status);
         dispatch(toggleIsFetching(false));
         dispatch(setUsers(someUsers));

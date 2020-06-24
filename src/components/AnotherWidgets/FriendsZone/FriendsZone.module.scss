@@ -9,13 +9,15 @@
   }
 
   .widgetBody {
-      .usersList {
+      .pageListWrapper {
           margin: 0;
           padding: 0;
           .listItem {
               list-style-type: none;
               display: flex;
               align-items: center;
+
+
               .likeButton {
                   font-size: 20px;
                   margin-left: auto;
@@ -38,6 +40,7 @@
                       right: 0;
                   }
               }
+
           }
       }
   }

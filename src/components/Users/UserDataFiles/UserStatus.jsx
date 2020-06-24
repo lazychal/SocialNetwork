@@ -5,8 +5,8 @@ let UserStatus = ({user}) => {
 
     return <p className={s.itemSubtitle}>
         <a href="#">
-            { user.status.length < 20 ? user.status
-                : user.status.slice(0,19) + '...' }
+            { user.status.length < 15 ? user.status
+                : user.status.slice(0,14) + '...' }
         </a>
     </p>
 };

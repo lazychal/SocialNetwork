@@ -1,92 +1,62 @@
 
-
-.container {
-  display: flex;
-  .listItemThumb {
-    .navLink {
-      color: #007bff;
-      text-decoration: none;
-      background-color: transparent;
+.itemTitle {
+  margin-bottom: 0;
+  a {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding-bottom: 3px;
+    color: #333333;
+    margin-bottom: 0;
+    text-decoration: none;
+    &:hover {
+      color: #dc4734;
       transition: 0.4s;
-      img {
-        width: 45px;
-        height: 45px;
-        display: block;
-        border-radius: 50%;
-        overflow: hidden;
-      }
     }
-    .listItemInfo {
-      padding-left: 10px;
-      .itemTitle {
-        margin-bottom: 0;
-        a {
-          font-size: 14px;
-          font-weight: 700;
-          line-height: 1.3;
-          padding-bottom: 3px;
-          color: #333333;
-          margin-bottom: 0;
-          text-decoration: none;
-          &:hover {
-            color: #dc4734;
-            transition: 0.4s;
-          }
-        }
-      }
-
-      .itemSubtitle {
-        margin-top: 0;
-        a {
-          font-size: 12px;
-          font-weight: 400;
-          color: #666666;
-          text-transform: capitalize;
-          margin: 0;
-          text-decoration: none;
-          &:hover {
-            color: #dc4734;
-            transition: 0.4s;
-          }
-        }
-      }
-      .itemSubtitle:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-
-  .buttons {
-    //visibility: hidden;
-    .unfollow {
-      border-radius: 1px;
-      cursor: pointer;
-    }
-    .follow {
-      border-radius: 1px;
-      cursor: pointer;
-    }
-  }
-  .userInfo {
-
-    .userName {
-
-    }
-    .userStatus {
-      font-size: 12px;
-    }
-  }
-  .userLocation {
-    font-size: 12px;
   }
 }
 
 
-.preloader {
-  width: 120px;
-  height: auto;
-  position: absolute;
-  z-index: 9999;
-  margin: 250px;
+
+.listItemThumb {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  .navLink {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    transition: 0.4s;
+    img{
+      vertical-align: middle;
+      border-style: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 17px;
+    }
+  }
+}
+
+.listItemInfo {
+  padding-left: 10px;
+
+
+  .itemSubtitle {
+    margin-top: 0;
+    a {
+      font-size: 12px;
+      font-weight: 400;
+      color: #666666;
+      text-transform: capitalize;
+      margin: 0;
+      text-decoration: none;
+      &:hover {
+        color: #dc4734;
+        transition: 0.4s;
+      }
+    }
+  }
+  .itemSubtitle:last-child {
+    margin-bottom: 0;
+  }
 }

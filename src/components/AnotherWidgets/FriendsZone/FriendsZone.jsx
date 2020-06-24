@@ -3,21 +3,21 @@ import {connect, useDispatch} from "react-redux";
 import {getFollowingInProgress, getIsFetching, getUsers} from "../../../redux/users-selectors";
 import {compose} from "redux";
 import {requestUsers, toggleFollowingProgress} from "../../../redux/users-reducer";
-import UserData from "../../Users/UserData";
 import s from "./FriendsZone.module.scss";
 import heart from "../../../assets/images/icons/heart.png";
 import heartColor from "../../../assets/images/icons/heart-color.png";
+import UserCardForFZ from "./UserCardForFZ";
 
 const FriendsZone = ({users, followingInProgress}) => {
 
     return <div className={s.container}>
         <h4 className={s.widgetTitle}>Find Your Friends</h4>
         <div className={s.widgetBody}>
-            <ul className={s.usersList}>
+            <ul className={s.pageListWrapper}>
                 {
                     users.map(u =>
                     <li className={s.listItem}>
-                        <UserData user={u}
+                        <UserCardForFZ user={u}
                                   key={u.id}
                                   followingInProgress={followingInProgress}
                         />

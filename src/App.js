@@ -13,7 +13,7 @@ import NewsFeedContainer from "./components/NewsFeed/NewsFeed";
 import {RecentNotificationsContainer} from "./components/AnotherWidgets/RecentNotifications/RecentNotificationsContainer";
 import Advertisement from "./components/AnotherWidgets/Advertisement/Advertisement";
 import FriendsZoneContainer from "./components/AnotherWidgets/FriendsZone/FriendsZone";
-import GetUsersContainer from "./components/Widgets/Users/GetUsers";
+import GetUsersContainer from "./ZIP/Users/GetUsers";
 
 // const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 // const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
@@ -64,9 +64,9 @@ class App extends React.Component {
                                 <div className={s.SubTopNewsWidgetArea}>
                                     <TopNewsContainer/>
                                 </div>
-                                <div className={s.SubGetUsersWidgetArea}>
-                                    <GetUsersContainer/>
-                                </div>
+                                {/*<div className={s.SubGetUsersWidgetArea}>*/}
+                                {/*    <GetUsersContainer/>*/}
+                                {/*</div>*/}
                             </div>
 
                             <div className={s.newsFeedArea}>
