@@ -26,7 +26,7 @@ const Header = (props) => {
                         </form>
                     </div>
                     <div className={s.profileSettingBox}>
-                        <img className={s.userPhoto} src={props.userPic} alt="User Mini"/>
+                        <img className={s.userPhoto} src={props.userPic} alt="UserData Mini"/>
                         {props.isAuth ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>
                             : <NavLink to={'/login'}>Login</NavLink>}
                     </div>

@@ -15,7 +15,7 @@ const CardProfile = ({fullName, status, userPic}) => {
                      className={s.profileBannerSmall}
                 />
                 <img src={userPic}
-                     alt="User Picture"
+                     alt="UserData Picture"
                      className={s.userPic}
                 />
             </NavLink>

@@ -12,7 +12,7 @@ const NewPost = ({showModal, setShowModal, addNewPost, userPic}) => {
         <div className={s.userThumb}>
             <a href="#">
                 <img src={userPic}
-                     alt="User Picture"
+                     alt="UserData Picture"
                 />
             </a>
         </div>

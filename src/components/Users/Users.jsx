@@ -1,6 +1,6 @@
 import React from "react";
 import Paginator from "../common/paginator/Paginator";
-import User from "./User";
+import UserData from "./UserData";
 
 let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, users, ...props}) => {
 
@@ -12,11 +12,11 @@ let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, users, ...p
 
         <div>
             {users.filter(u => u.photos.small !== null).map(u =>
-                <User user={u}
-                      key={u.id}
-                      followingInProgress={props.followingInProgress}
-                      unfollow={props.unfollow}
-                      follow={props.follow}
+                <UserData user={u}
+                          key={u.id}
+                          followingInProgress={props.followingInProgress}
+                          unfollow={props.unfollow}
+                          follow={props.follow}
                 />
             )
             }

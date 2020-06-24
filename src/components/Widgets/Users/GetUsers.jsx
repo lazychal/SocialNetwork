@@ -3,7 +3,7 @@ import s from './GetUsers.module.scss';
 import {getFollowingInProgress, getIsFetching, getUsers} from "../../../redux/users-selectors";
 import {connect, useDispatch} from "react-redux";
 import {compose} from "redux";
-import User from "../../Users/User";
+import UserData from "../../Users/UserData";
 import {requestUsers, toggleFollowingProgress} from "../../../redux/users-reducer";
 
 const GetUsers = ({users, followingInProgress}) => {
@@ -15,9 +15,9 @@ const GetUsers = ({users, followingInProgress}) => {
 
                 {users.map(u =>
                     <li>
-                        <User user={u}
-                              key={u.id}
-                              followingInProgress={followingInProgress}
+                        <UserData user={u}
+                                  key={u.id}
+                                  followingInProgress={followingInProgress}
                         />
                     </li>
                 )

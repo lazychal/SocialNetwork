@@ -18,15 +18,13 @@ const Post = (props) => {
     }, []);
     const [isYouLikeIt, setIsYouLikeIt] = useState(false);
 
-
-
     return (
         <div className={s.card}>
             <div className={s.postTitle}>
                 <div className={s.userThumb}>
                     <a href="#">
                         <img src={props.userPic}
-                             alt='User Thumb'
+                             alt='UserData Thumb'
                         />
                     </a>
                 </div>
@@ -96,7 +94,7 @@ const Post = (props) => {
 };
 
 const PostContainer = (props) => {
-
+    // Функция на перенос строки, в случае слишком длинного слова без пробелов.
     let validMessage = (m) => {
         let message = props.message.length < 55 ? props.message : '';
         while (m.length > 55) {

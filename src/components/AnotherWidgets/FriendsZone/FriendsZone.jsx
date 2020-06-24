@@ -3,7 +3,7 @@ import {connect, useDispatch} from "react-redux";
 import {getFollowingInProgress, getIsFetching, getUsers} from "../../../redux/users-selectors";
 import {compose} from "redux";
 import {requestUsers, toggleFollowingProgress} from "../../../redux/users-reducer";
-import User from "../../Users/User";
+import UserData from "../../Users/UserData";
 import s from "./FriendsZone.module.scss";
 import heart from "../../../assets/images/icons/heart.png";
 import heartColor from "../../../assets/images/icons/heart-color.png";
@@ -17,9 +17,9 @@ const FriendsZone = ({users, followingInProgress}) => {
                 {
                     users.map(u =>
                     <li className={s.listItem}>
-                        <User user={u}
-                              key={u.id}
-                              followingInProgress={followingInProgress}
+                        <UserData user={u}
+                                  key={u.id}
+                                  followingInProgress={followingInProgress}
                         />
                         <button className={s.likeButton}>
                             <img className={s.heart} src={heart} alt="Heart"/>
