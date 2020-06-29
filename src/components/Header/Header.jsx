@@ -1,6 +1,10 @@
 import React from 'react';
 import s from './Header.module.scss'
 import {NavLink} from "react-router-dom";
+import {faEnvelope, faUser} from "@fortawesome/free-regular-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faFile} from "@fortawesome/free-regular-svg-icons/faFile";
+import {faCog, faUnlockAlt} from "@fortawesome/free-solid-svg-icons";
 
 const Header = (props) => {
     debugger
@@ -41,13 +45,18 @@ const Header = (props) => {
                                 </div>
                                 <div className={s.profileBody}>
                                     <ul>
-                                        <li>Profile</li>
-                                        <li>Inbox</li>
-                                        <li>Activity</li>
+                                        <li>
+                                            {/*Вариант, где ховер загорается отдельно или на тексте или на иконке...*/}
+                                            <a href="#">
+                                                <FontAwesomeIcon icon={faUser} className={s.listAwesomeIcons}> </FontAwesomeIcon>  Profile
+                                            </a>
+                                        </li>
+                                        <li><FontAwesomeIcon icon={faEnvelope} className={s.listAwesomeIcons}> </FontAwesomeIcon> Inbox</li>
+                                        <li><FontAwesomeIcon icon={faFile} className={s.listAwesomeIcons}> </FontAwesomeIcon> Activity</li>
                                     </ul>
                                     <ul>
-                                        <li>Settings</li>
-                                        <li>Sign Out</li>
+                                        <li><FontAwesomeIcon icon={faCog} className={s.listAwesomeIcons}> </FontAwesomeIcon> Settings</li>
+                                        <li><FontAwesomeIcon icon={faUnlockAlt} className={s.listAwesomeIcons}> </FontAwesomeIcon> Sign Out</li>
                                     </ul>
                                 </div>
                             </div>

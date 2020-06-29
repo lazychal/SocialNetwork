@@ -151,6 +151,7 @@ $bgColor: #FCFEFF;
 
 .profileSettingBox {
   position: relative;
+
   .userPhoto {
     vertical-align: middle;
     border-style: none;
@@ -158,6 +159,7 @@ $bgColor: #FCFEFF;
     height: 35px;
     border-radius: 50%;
   }
+
   .profileDropdown {
     width: 250px;
     height: 290px;
@@ -167,23 +169,39 @@ $bgColor: #FCFEFF;
     margin-bottom: 0;
     padding: 0;
     overflow: auto;
+
     .profileHead {
       padding: 20px;
+
       .fullName {
         margin: 0;
       }
+
       .email {
 
       }
     }
+
     .profileBody {
+      .listAwesomeIcons {
+        color: darkgrey;
+        &:hover {
+          color: #dc4734;
+        }
+      }
 
       ul {
         margin: 0 0 0 35px;
         padding: 20px 0;
         border-top: 1px solid #dddddd;
+        list-style-type: none;
 
         li {
+          a {
+            &:hover {
+              color: #dc4734;
+            }
+          }
 
 
         }
