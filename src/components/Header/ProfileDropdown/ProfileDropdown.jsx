@@ -5,25 +5,13 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faUser} from "@fortawesome/free-regular-svg-icons";
 import {faFile} from "@fortawesome/free-regular-svg-icons/faFile";
 import {faCog, faUnlockAlt} from "@fortawesome/free-solid-svg-icons";
+import ProfileDropdownHeader from "./ProfileDropdownHeader";
 
 const ProfileDropdown = ({dropWindow, setDropWindow, fullName, isAuth, logout}) => {
     return <div className={dropWindow ? s.profileDropdown : s.hideDropdown} onBlur={()=>{setDropWindow(!dropWindow)}}>
-        <div className={s.profileHead}>
-            <ul>
-                <li>
-                    <h5 className={s.fullName}>
-                        <NavLink to={'/'}>
-                            {fullName}
-                        </NavLink>
-                    </h5>
-                </li>
-                <li>
-                    <NavLink to={'/'} className={s.email}>email@email.com</NavLink>
-                </li>
-            </ul>
 
+        <ProfileDropdownHeader fullName={fullName}/>
 
-        </div>
         <div className={s.profileBody}>
             <ul>
                 <li>
