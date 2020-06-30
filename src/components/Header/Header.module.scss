@@ -165,70 +165,7 @@ $bgColor: #FCFEFF;
     border-radius: 50%;
     cursor: pointer;
   }
-  .hideDropdown {
-    height: 0;
-    visibility: hidden;
-    transition: 0.4s;
-  }
-  .profileDropdown {
-    width: 250px;
-    height: 290px;
-    transition: 0.4s;
-    position: absolute;
-    right: 0;
-    @include globalContainersWrapper;
-    margin-bottom: 0;
-    padding: 0;
-    overflow: auto;
-    z-index: 1;
-    border-radius: 0 0 2px 2px;
-    .profileHead {
 
-      ul {
-        list-style-type: none;
-        padding-left: 0;
-
-        li {
-          padding-left: 20px;
-          cursor: pointer;
-          &:hover {
-            background-color: aliceblue;
-          }
-        }
-      }
-      .fullName {
-        margin: 0;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 1;
-        padding-bottom: 7px;
-      }
-      .email {
-
-      }
-    }
-
-    .profileBody {
-      .listAwesomeIcons {
-        color: darkgrey;
-      }
-
-      ul {
-        margin: 0;
-        padding: 10px 0 10px 0;
-        border-top: 1px solid #dddddd;
-        list-style-type: none;
-
-        li {
-          padding-left: 20px;
-          cursor: pointer;
-          &:hover {
-            background-color: aliceblue;
-          }
-        }
-      }
-    }
-  }
 }
 
 @media (min-width: 768px) {

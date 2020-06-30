@@ -1,5 +1,5 @@
 import React from 'react';
-import s from '../Header.module.scss'
+import s from './ProfileDropdown.module.scss'
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faUser} from "@fortawesome/free-regular-svg-icons";
