@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './Header.module.scss'
 import {NavLink} from "react-router-dom";
 import {faEnvelope, faUser} from "@fortawesome/free-regular-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFile} from "@fortawesome/free-regular-svg-icons/faFile";
-import {faCog, faUnlockAlt} from "@fortawesome/free-solid-svg-icons";
+import {faCog, faSearch, faUnlockAlt} from "@fortawesome/free-solid-svg-icons";
 
 const Header = (props) => {
+
+    const [dropWindow, setDropWindow] = useState(false);
 
     return <header className={s.header}>
         <div className={s.container}>
@@ -28,22 +30,26 @@ const Header = (props) => {
                 <div className={s.searchContainer}>
                     <form className={s.topSearchBox} action="">
                         <input type="text" placeholder='Search' className={s.topSearchField}/>
-                        <button className={s.topSearchBtn}>S</button>
+                        {/*<button className={s.topSearchBtn}>S</button>*/}
+                        <FontAwesomeIcon icon={faSearch} style={{fontSize: '20px'}}> </FontAwesomeIcon>
                     </form>
                 </div>
                 <div className={s.profileSettingBox}>
                     {/*<a className={s.profileTrigger} href="" >*/}
-                    <img className={s.userPhoto} src={props.userPic} alt="UserData Mini"/>
+                    <img className={s.userPhoto} src={props.userPic} alt="UserData Mini"
+                         onClick={()=>{setDropWindow(!dropWindow)}}
+                    />
                     {/*</a>*/}
-                    <div className={s.profileDropdown}>
+
+                    <div className={dropWindow ? s.profileDropdown : s.hideDropdown} onBlur={()=>{setDropWindow(!dropWindow)}}>
                         <div className={s.profileHead}>
                             <ul>
                                 <li>
-                                    {/*<h5 className={s.fullName}>*/}
+                                    <h5 className={s.fullName}>
                                     <NavLink to={'/'}>
                                         {props.fullName}
                                     </NavLink>
-                                    {/*</h5>*/}
+                                    </h5>
                                 </li>
                                 <li>
                                     <NavLink to={'/'} className={s.email}>email@email.com</NavLink>
@@ -101,9 +107,9 @@ const Header = (props) => {
                     {/*{props.isAuth ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>*/}
                     {/*    : <NavLink to={'/login'}>Login</NavLink>}*/}
 
-                    {props.isAuth ?
-                        <li onClick={props.logout}>{props.login} Logout</li>
-                        : <li><NavLink to={'/login'}>Login</NavLink></li>}
+                    {/*{props.isAuth ?*/}
+                    {/*    <li onClick={props.logout}>{props.login} Logout</li>*/}
+                    {/*    : <li><NavLink to={'/login'}>Login</NavLink></li>}*/}
                 </div>
             </div>
 
