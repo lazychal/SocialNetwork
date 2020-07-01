@@ -1,38 +1,53 @@
 @import "src/components/common/GlobalMixins/GlobalMixin";
 
 
-
 .hideDropdown {
   height: 0;
-  visibility: hidden;
-  transition: 0.4s;
+  width: 250px;
+  transition: 0.4s all;
+  position: absolute;
+  right: 0;
+
+  ul, li {
+    transition: 0.4s;
+    height: 0;
+    opacity: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 }
+
 .profileDropdown {
   width: 250px;
   height: 290px;
-  transition: 0.4s;
+  transition: 0.4s all;
   position: absolute;
   right: 0;
   @include globalContainersWrapper;
   margin-bottom: 0;
   padding: 0;
-  overflow: auto;
+  overflow: hidden;
   z-index: 1;
   border-radius: 0 0 2px 2px;
+
   .profileHead {
 
     ul {
       list-style-type: none;
       padding-left: 0;
+      transition: 0.8s;
 
       li {
         padding-left: 20px;
         cursor: pointer;
+
         &:hover {
           background-color: aliceblue;
         }
       }
     }
+
     .fullName {
       margin: 0;
       font-size: 16px;
@@ -40,6 +55,7 @@
       line-height: 1;
       padding-bottom: 7px;
     }
+
     .email {
 
     }
@@ -59,6 +75,7 @@
       li {
         padding-left: 20px;
         cursor: pointer;
+
         &:hover {
           background-color: aliceblue;
         }

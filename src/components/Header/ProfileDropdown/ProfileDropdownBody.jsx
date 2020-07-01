@@ -6,7 +6,7 @@ import {faCog, faUnlockAlt} from "@fortawesome/free-solid-svg-icons";
 import {ProfileDropdownBodyItem} from "./ProfileDropdownBodyItem";
 
 const ProfileDropdownBody = ({isAuth, logout, state}) => {
-    debugger
+
     return <div className={s.profileBody}>
         <ul>
             <ProfileDropdownBodyItem navLinkPath={state[0].navLinkPath} icon={state[0].icon} title={state[0].title}/>
