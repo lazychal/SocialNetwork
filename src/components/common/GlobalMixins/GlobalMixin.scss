@@ -63,3 +63,49 @@
     background-color: #dc4734;
   }
 }
+@mixin body {
+  color: #444444;
+  line-height: 1.7;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #f1f1f1;
+  font-family: "Roboto", sans-serif;
+}
+
+// Apply in: Header.module.scss, ProfileHeader.module.scss
+@mixin header {
+  @include body;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
+  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+@mixin headerContainer {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+@mixin li-navigation {
+  display: inline-block;
+  margin-right: 60px;
+  position: relative;
+}
+
+@mixin mainMenu-ul-li-navLink {
+  color: #333333;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 21px 0;
+  text-transform: capitalize;
+}
+
+//---------------------------------------------------------------------

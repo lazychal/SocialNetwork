@@ -1,0 +1,40 @@
+@import "src/components/common/GlobalMixins/GlobalMixin";
+
+.header {
+    @include header;
+    .container {
+        @include headerContainer;
+        .mainMenu {
+            li {
+                @include li-navigation;
+            }
+
+            ul li .navLink {
+                @include mainMenu-ul-li-navLink;
+            }
+
+            ul li:hover .navLink, ul li:active .navLink {
+                color: #dc4734;
+                transition: 0.4s;
+            }
+
+            .navLink:hover, .navLink:focus {
+                outline: none;
+                text-decoration: none;
+            }
+
+            .navLink {
+                text-decoration: none;
+            }
+            .navUl {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .button {
+            @include redBtn;
+            top: 21px;
+            right: 20px;
+        }
+    }
+}

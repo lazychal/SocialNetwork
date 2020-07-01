@@ -1,7 +1,46 @@
 @import "src/components/common/GlobalMixins/GlobalMixin.scss";
+@import "src/App.module.scss";
 
-.profileWrapper {
-    @include globalContainersWrapper;
+
+  .profileHeader {
+
+  }
+.appBody {
+  @include appBody;
+  grid-template-areas: "widgetArea newsFeedArea infoArea";
 }
+  .widgetArea {
+    @include widgetArea;
+    grid-template-areas:
+            'subUserPhotoCardWidgetArea'
+            'subProfileInfoCardWidgetArea'
+            'subMemoriesCardWidgetArea'
+            'subPagesWidgetArea';
+    grid-template-rows: 280px 355px 340px 515px;
+    .subUserPhotoCardWidgetArea {
+      display: grid;
+      grid-area: subUserPhotoCardWidgetArea;
+    }
+
+    .subProfileInfoCardWidgetArea {
+      display: grid;
+      grid-area: subProfileInfoCardWidgetArea;
+    }
+
+    .subMemoriesCardWidgetArea {
+      display: grid;
+      grid-area: subMemoriesCardWidgetArea;
+    }
+
+    .subPagesWidgetArea {
+      display: grid;
+      grid-area: subPagesWidgetArea;
+    }
+  }
+
+
+  .footer {
+  }
+
 
 

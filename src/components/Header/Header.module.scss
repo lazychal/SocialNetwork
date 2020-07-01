@@ -1,35 +1,3 @@
-// Переменная с цветом. Например, для всего фона сайта или для всех блоков.
-$bgColor: #FCFEFF;
-
-
-@mixin fontSize {
-  font-size: 1.1em;
-  font-weight: normal;
-  font-family: Arial, sans-serif;
-  // Переменная тоже может быть параметром миксина:
-  color: $bgColor;
-}
-
-
-// Миксин с параметрами
-@mixin link($link, $hover, $active, $visited) {
-  a {
-    color: $link;
-  }
-  link:hover {
-    color: $hover;
-  }
-  link:active {
-    color: $active;
-  }
-  link:visited {
-    color: $visited;
-  }
-}
-
-// Применение. Цвета можно передавать в любом формате.
-@include link(red, green, blue, purple);
-
 @import "src/components/common/GlobalMixins/GlobalMixin";
 
 @mixin body {
@@ -41,33 +9,10 @@ $bgColor: #FCFEFF;
   font-family: "Roboto", sans-serif;
 }
 
-@mixin li-navigation {
-  display: inline-block;
-  margin-right: 60px;
-  position: relative;
-}
 
-@mixin mainMenu-ul-li-navLink {
-  color: #333333;
-  display: block;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1;
-  padding: 21px 0;
-  text-transform: capitalize;
-}
 
 .header {
-  @include body;
-  /*grid-area: h;*/
-  top: 0;
-  left: 0;
-  position: fixed;
-  width: 100%;
-  background-color: #fff;
-  z-index: 100;
-  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
+  @include header;
 
   img {
     width: 50px;
@@ -75,11 +20,7 @@ $bgColor: #FCFEFF;
 }
 
 .container {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
+  @include headerContainer;
 }
 
 .mainMenu {
