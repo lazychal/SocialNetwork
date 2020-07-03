@@ -1,18 +1,15 @@
 import React from 'react';
+import s from './UserPhotoCard.module.scss';
+import {useSelector} from "react-redux";
 
-const backgroundStyle = {
-    backgroundColor: 'red',
-    position: 'absolute',
-    width: '100%',
-    height: '270px',
-    top: '-180px'
-};
+const UserPhotoCard = ({userPic}) => {
 
-const UserPhotoCard = () => {
-
-    return <div style={backgroundStyle}>
-
+    return <div className={s.u}>
+        <img src={userPic} alt="User"/>
     </div>
 };
-
-export default UserPhotoCard;
+export const UserPhotoCardContainer = () => {
+    debugger
+    const {userPic} = useSelector(state => state.profilePage.profile.photos.small);
+    return <UserPhotoCard userPic={userPic}/>
+};

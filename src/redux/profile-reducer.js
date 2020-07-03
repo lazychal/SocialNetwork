@@ -16,7 +16,10 @@ let initialState = {
         {id: 5, message: 'yo', likesCount: 100}
     ],
     profile: {
-        photos: {},
+        photos: {
+            large: '',
+            small: ''
+        },
         contacts: {},
         fullName: ''
     },
