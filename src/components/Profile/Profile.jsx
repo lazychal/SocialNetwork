@@ -9,6 +9,7 @@ import Advertisement from "../AnotherWidgets/Advertisement/Advertisement";
 import FriendsZoneContainer from "../AnotherWidgets/FriendsZone/FriendsZone";
 import ProfileBackground from "./ProfileHeader/ProfileBackground";
 import ProfileMenu from "./ProfileHeader/ProfileMenu";
+import UserPhotoCard from "./Widgets/UserPhotoCard";
 
 const Profile = (props) => {
 
@@ -31,7 +32,7 @@ const Profile = (props) => {
                     <div className={s.widgetArea}>
 
                         <div className={s.subUserPhotoCardWidgetArea}>
-                            {/*<UserPhotoCard/>*/}
+                            <UserPhotoCard/>
                         </div>
                         <div className={s.subProfileInfoCardWidgetArea}>
                             {/*<ProfileInfoCard/>*/}
