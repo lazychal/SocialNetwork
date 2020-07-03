@@ -17,10 +17,11 @@ const ProfileMenu = (props) => {
                         <li><NavLink to='/' className={s.navLink}>More</NavLink></li>
                     </ul>
                 </nav>
+                {/*<div className={s.button}>*/}
+                    <button className={s.button}>Edit Profile</button>
+                {/*</div>*/}
             </div>
-            <div className={s.button}>
-                <button>Edit Profile</button>
-            </div>
+
 
         </div>
     </div>

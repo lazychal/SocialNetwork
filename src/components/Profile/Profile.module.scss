@@ -1,12 +1,11 @@
 @import "src/components/common/GlobalMixins/GlobalMixin.scss";
 @import "src/App.module.scss";
 
-
-  .profileHeader {
-
-  }
+.profileHeader {
+}
 .appBody {
   @include appBody;
+  //padding: 390px 0 105px;
   grid-template-areas: "widgetArea newsFeedArea infoArea";
 }
   .widgetArea {

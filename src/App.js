@@ -42,9 +42,9 @@ class App extends React.Component {
         return (
 
             <div className={s.appWrapper}>
-                {/*<Routes/>*/}
+                <Routes/>
                 <div className={s.appHeader}>
-                    <HeaderContainer/>
+                    <HeaderContainer />
                 </div>
                 <div className={s.content}>
                     <div className={s.container}>

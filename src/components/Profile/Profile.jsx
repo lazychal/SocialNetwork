@@ -8,24 +8,26 @@ import {RecentNotificationsContainer} from "../AnotherWidgets/RecentNotification
 import Advertisement from "../AnotherWidgets/Advertisement/Advertisement";
 import FriendsZoneContainer from "../AnotherWidgets/FriendsZone/FriendsZone";
 import ProfileBackground from "./ProfileHeader/ProfileBackground";
+import ProfileMenu from "./ProfileHeader/ProfileMenu";
 
 const Profile = (props) => {
 
     return <div className={appStyles.appWrapper}>
 
         <div className={appStyles.appHeader}>
-            <HeaderContainer/>
+            <HeaderContainer />
         </div>
 
-        {/*Новый блок*/}
-        <div className={s.profileHeader}>
-            <ProfileBackground/>
-            {/*<ProfileMenu/>*/}
-        </div>
+
 
         <div className={appStyles.content}>
             <div className={appStyles.container}>
-                <div className={appStyles.appBody}>
+                <div className={s.profileHeader}>
+                    <ProfileBackground/>
+                    <ProfileMenu/>
+                </div>
+                <div className={s.appBody}>
+
                     <div className={s.widgetArea}>
 
                         <div className={s.subUserPhotoCardWidgetArea}>
