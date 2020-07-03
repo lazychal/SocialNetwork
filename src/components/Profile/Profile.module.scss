@@ -2,10 +2,13 @@
 @import "src/App.module.scss";
 
 .profileHeader {
+  position: relative;
+  width: 210.4vh;
+  right: 15%;
 }
 .appBody {
   @include appBody;
-  //padding: 390px 0 105px;
+  padding: 30px 0 105px;
   grid-template-areas: "widgetArea newsFeedArea infoArea";
 }
   .widgetArea {
