@@ -1,21 +1,52 @@
+$tryColor: #fff;
+
 .userPhotoCard {
-    background-color: red;
+  background-color: red;
+  position: absolute;
+  width: 100%;
+  height: 270px;
+  top: -180px;
+  cursor: pointer;
+  &:hover .editIconContainer {
+    opacity: 1;
+    transition: opacity .15s ease;
+  }
+
+  img {
+    background-color: #666666;
+    width: inherit;
+  }
+
+  .editIconContainer {
+    background: rgba(29, 32, 34, 0.6);
+    width: 21px;
+    height: 21px;
+    position: relative;
+    bottom: 263px;
+    left: 235px;
+    opacity: 0;
+
+    .faPen {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      cursor: pointer;
+      color: $tryColor;
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  &:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
     position: absolute;
-    width: 100%;
-    height: 270px;
-    top: -180px;
-    img {
-        background-color: #666666;
-        width: inherit;
-    }
-    &:before {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        content: '';
-        position: absolute;
-        pointer-events: none;
-        border: 10px solid #fff;
-    }
-};
+    pointer-events: none;
+    border: 10px solid #fff;
+  }
+}
+
+;
