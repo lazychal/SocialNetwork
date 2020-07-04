@@ -4,12 +4,12 @@ import {useSelector} from "react-redux";
 
 const UserPhotoCard = ({userPic}) => {
 
-    return <div className={s.u}>
+    return <div className={s.userPhotoCard}>
         <img src={userPic} alt="User"/>
     </div>
 };
 export const UserPhotoCardContainer = () => {
-    debugger
-    const {userPic} = useSelector(state => state.profilePage.profile.photos.small);
+
+    const userPic = useSelector(state => state.profilePage.profile.photos.large);
     return <UserPhotoCard userPic={userPic}/>
 };

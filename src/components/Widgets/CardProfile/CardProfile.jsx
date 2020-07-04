@@ -43,7 +43,7 @@ const CardProfileContainer = (props) => {
 };
 
 let mapStateToProps = (state) => {
-debugger
+
     return {
         fullName: state.profilePage.profile.fullName,
         status: state.profilePage.status,
