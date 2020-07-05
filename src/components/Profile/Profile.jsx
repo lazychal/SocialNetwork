@@ -11,8 +11,8 @@ import ProfileBackground from "./ProfileHeader/ProfileBackground";
 import ProfileMenu from "./ProfileHeader/ProfileMenu";
 import {UserPhotoCardContainer} from "./Widgets/UserPhotoCard";
 
-const Profile = (props) => {
-
+const Profile = ({profile, userId}) => {
+    // debugger
     return <div className={appStyles.appWrapper}>
 
         <div className={appStyles.appHeader}>
@@ -30,7 +30,7 @@ const Profile = (props) => {
                     <div className={s.widgetArea}>
 
                         <div className={s.subUserPhotoCardWidgetArea}>
-                            <UserPhotoCardContainer/>
+                            <UserPhotoCardContainer userId={userId}/>
                         </div>
                         <div className={s.subProfileInfoCardWidgetArea}>
                             {/*<ProfileInfoCard/>*/}

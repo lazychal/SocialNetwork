@@ -1,5 +1,9 @@
 $tryColor: #fff;
 
+input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
+  cursor: pointer;
+}
+
 .userPhotoCard {
   background-color: red;
   position: absolute;
@@ -25,7 +29,15 @@ $tryColor: #fff;
     bottom: 263px;
     left: 235px;
     opacity: 0;
-
+    input {
+      width: inherit;
+      height: inherit;
+      left: -2px;
+      position: relative;
+      z-index: 100;
+      opacity: 0;
+      cursor: pointer;
+    }
     .faPen {
       position: absolute;
       top: 4px;
@@ -34,6 +46,7 @@ $tryColor: #fff;
       color: $tryColor;
       width: 13px;
       height: 13px;
+
     }
   }
 
