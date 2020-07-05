@@ -55,6 +55,7 @@ const profileReducer = (state = initialState, action) => {
             return {...state, posts: state.posts.filter(p => p.id !== action.postId)};
 
         case SAVE_PHOTO_SUCCESS:
+            debugger
             return {...state, profile: {...state.profile, photos: action.photos}};
 
         default:
@@ -87,6 +88,7 @@ export const updateStatus = (status) => async (dispatch) => {
     }
 };
 export const savePhoto = (file) => async (dispatch) => {
+    debugger
     let response = await profileAPI.savePhoto(file);
     if (response.data.resultCode === 0) {
         dispatch(savePhotoSuccess(response.data.data.photos));
