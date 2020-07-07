@@ -35,9 +35,9 @@ class App extends React.Component {
         // Подчищаем "мусор" за addEventListener
         window.removeEventListener('unhandledrejection', this.catchAllUnhandledErrors)
     }
-
+    style = { width: '150px', position: 'absolute', left: '46%', top: '40%', zIndex: '100' };
     render() {
-        if (!this.props.initialized) { return <Preloader/> }
+        if (!this.props.initialized) { return <Preloader style={this.style}/> }
         return (
 
             <div className={s.appWrapper}>

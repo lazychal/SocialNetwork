@@ -6,6 +6,7 @@ const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 const DELETE_POST = 'DELETE_POST';
 const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS';
+const IS_LOADING = 'IS_LOADING';
 
 let initialState = {
     posts: [
@@ -24,7 +25,7 @@ let initialState = {
         fullName: ''
     },
     status: '',
-
+    isLoading: false,
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -70,6 +71,7 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
 export const deletePost = (postId) => ({type: DELETE_POST, postId});
 export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
+export const isLoading = (value) => ({type: IS_LOADING, value});
 
 //Thunks
 
@@ -88,11 +90,14 @@ export const updateStatus = (status) => async (dispatch) => {
     }
 };
 export const savePhoto = (file) => async (dispatch) => {
-    debugger
+
+    dispatch(isLoading(true));
     let response = await profileAPI.savePhoto(file);
     if (response.data.resultCode === 0) {
         dispatch(savePhotoSuccess(response.data.data.photos));
+        dispatch(isLoading(false));
     }
+    dispatch(isLoading(false));
 };
 export const saveProfile = (profile) => async (dispatch, getState) => {
     const userId = getState().auth.userId;

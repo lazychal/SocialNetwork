@@ -12,7 +12,6 @@ import ProfileMenu from "./ProfileHeader/ProfileMenu";
 import {UserPhotoCardContainer} from "./Widgets/UserPhotoCard";
 
 const Profile = ({profile, userId}) => {
-    // debugger
     return <div className={appStyles.appWrapper}>
 
         <div className={appStyles.appHeader}>
@@ -72,23 +71,6 @@ const Profile = ({profile, userId}) => {
 };
 export default Profile;
 
-{/* <div className={s.profileWrapper}>*/
-}
-
-{/*     <ProfileInfo isOwner={props.isOwner}*/
-}
-{/*                 savePhoto={props.savePhoto}*/
-}
-{/*                 profile={props.profile}*/
-}
-{/*                 status={props.status}*/
-}
-{/*                 saveProfile={props.saveProfile}*/
-}
-{/*                 updateStatus={props.updateStatus}/>*/
-}
-{/*</div>*/
-}
 
 
 
